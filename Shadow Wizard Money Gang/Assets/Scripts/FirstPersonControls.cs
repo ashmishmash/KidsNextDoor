@@ -21,18 +21,18 @@ public class FirstPersonControls : MonoBehaviour
     private Vector3 velocity; // Velocity of the player
     private CharacterController characterController; // Reference to the CharacterController component
 
-    [Header("SHOOTING SETTINGS")]
+    [Header("LASER SETTINGS")]
     [Space(5)]
-    public GameObject projectilePrefab; // Projectile prefab for shooting
-    public Transform firePoint; // Point from which the projectile is fired
-    public float projectileSpeed = 20f; // Speed at which the projectile is fired
+    public GameObject laserPrefab; //laser beam prefab
+    public bool isLaserOn = false;
+    private bool holdingLaser = true;
 
     [Header("PICKING UP SETTINGS")]
     [Space(5)]
     public Transform holdPosition; // Position where the picked-up object will be held
     private GameObject heldObject; // Reference to the currently held object
     public float pickUpRange = 3f; // Range within which objects can be picked up
-    private bool holdingGun = false;
+    
 
     [Header("CROUCH SETTINGS")]
     [Space(5)]
@@ -40,6 +40,9 @@ public class FirstPersonControls : MonoBehaviour
     public float standingHeight = 2f; //make normal
     public float crouchSpeed = 1.5f; //make slow
     public bool isCrouching = false; //check if crouch
+
+    //Variables 
+    float currentSpeed;
 
     private void Awake()
     {
@@ -67,13 +70,17 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
 
         // Subscribe to the shoot input event
-        playerInput.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
+        playerInput.Player.Laser.performed += ctx => Laser(); // Call the Laser method when shoot input is performed
 
         // Subscribe to the pick-up input event
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
 
         // Subscribe to the crouch input event
         playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the ToggleCrouch method when crouch input is performed
+
+        //Subscribe to the sprint input event
+        playerInput.Player.Sprint.performed += ctx => Sprint(); // Call the Sprint method when crouch input is performed
+        playerInput.Player.Sprint.canceled += ctx => Walk();
     }
 
     private void Update()
@@ -91,17 +98,6 @@ public class FirstPersonControls : MonoBehaviour
 
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
-
-        //Adjust speed if crouching
-        float currentSpeed;
-        if (isCrouching)
-        {
-            currentSpeed = crouchSpeed;
-        }
-        else
-        {
-            currentSpeed = moveSpeed;
-        }
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
@@ -144,19 +140,22 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public void Laser()
     {
-        if (holdingGun == true)
+        if (holdingLaser == true)
         {
-            // Instantiate the projectile at the fire point
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-
-            // Get the Rigidbody component of the projectile and set its velocity
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.velocity = firePoint.forward * projectileSpeed;
-
-            // Destroy the projectile after 3 seconds
-            Destroy(projectile, 3f);
+            if (isLaserOn)
+            {
+                //Turn off laser
+                laserPrefab.SetActive(false);
+                isLaserOn = false;
+            }
+            else
+            {
+                //Turn on laser
+                laserPrefab.SetActive(true);
+                isLaserOn = true;
+            }
         }
     }
 
@@ -167,7 +166,7 @@ public class FirstPersonControls : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
             heldObject.transform.parent = null;
-            holdingGun = false;
+            holdingLaser = false;
         }
 
         // Perform a raycast from the camera's position forward
@@ -203,7 +202,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
 
-                holdingGun = true;
+                holdingLaser = true;
             }
         }
     }
@@ -215,13 +214,33 @@ public class FirstPersonControls : MonoBehaviour
             //Stand up
             characterController.height = standingHeight;
             isCrouching = false;
-        } 
+        }
         else
         {
             //Crouch down
             characterController.height = crouchHeight;
             isCrouching = true;
         }
+
+        //Adjust speed if crouching
+        if (isCrouching)
+        {
+            currentSpeed = crouchSpeed;
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }
+    }
+
+    public void Sprint()
+    {
+        currentSpeed = moveSpeed * 2;
+    }
+
+    public void Walk()
+    {
+        currentSpeed = moveSpeed;
     }
 
 

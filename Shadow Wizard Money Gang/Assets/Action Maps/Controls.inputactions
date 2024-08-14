@@ -33,7 +33,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Laser",
                     "type": "Button",
                     "id": "341e1f9d-263d-40aa-8021-f879ba2b16aa",
                     "expectedControlType": "Button",
@@ -54,6 +54,15 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "f6d5104a-cd82-4da1-bfc2-c82421ff1774",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "00bd4d02-85c4-456a-a0d8-8de8b75b1511",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -233,7 +242,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Laser",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -244,7 +253,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Laser",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -289,6 +298,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6568ea8-d30b-4b9f-b185-fd65d15fac08",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6cb8fc3f-7cd2-4e48-9651-d0ed6449e4b9",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
