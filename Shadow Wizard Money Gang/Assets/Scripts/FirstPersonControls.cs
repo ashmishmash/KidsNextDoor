@@ -112,12 +112,16 @@ public class FirstPersonControls : MonoBehaviour
         // Horizontal rotation: Rotate the player object around the y-axis
         transform.Rotate(0, LookX, 0);
 
+        
+
         // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
         verticalLookRotation -= LookY;
         verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
 
         // Apply the clamped vertical rotation to the player camera
         playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+
+
     }
 
     public void ApplyGravity()
