@@ -10,9 +10,9 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) 
+
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("tp");
             player.transform.position = Tp2.transform.position;
         }
     }
