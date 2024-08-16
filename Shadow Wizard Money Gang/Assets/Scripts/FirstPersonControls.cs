@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -43,6 +46,9 @@ public class FirstPersonControls : MonoBehaviour
 
     //Variables 
     float currentSpeed;
+   
+    public UnityEngine.UI.Image[] TutorialImages;
+    public UnityEngine.UI.Image tutorialImage;
 
     private void Awake()
     {
