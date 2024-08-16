@@ -13,6 +13,13 @@ public class TriggerPointCheck : MonoBehaviour
     public GameObject ShootTrgger3;
     public GameObject ConfetyCanon1;
     public GameObject ConfetyCanon2;
+    public GameObject Pic1;
+    public GameObject Pic2;
+    public GameObject Pic3;
+    public GameObject Pic4;
+    public GameObject CatPic;
+    public GameObject CatPic2;
+    public GameObject CatPic3;
     void Update()
     {
         if (Pt1.PointOneOpen) 
@@ -28,6 +35,13 @@ public class TriggerPointCheck : MonoBehaviour
                     ShootTrgger3.SetActive(false);
                     ConfetyCanon1.SetActive(true);
                     ConfetyCanon2.SetActive(true);
+                    Pic1.SetActive(true);
+                    Pic2.SetActive(true);
+                    Pic3.SetActive(true);
+                    Pic4.SetActive(true);
+                    CatPic.SetActive(false);
+                    CatPic2.SetActive(false);
+                    CatPic3 .SetActive(false);
                 }
             }
         }
