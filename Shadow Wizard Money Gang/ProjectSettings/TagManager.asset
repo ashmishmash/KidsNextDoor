@@ -9,6 +9,8 @@ TagManager:
   - PickUp
   - Laser
   - DoorFace
+  - Switch
+  - Door
   layers:
   - Default
   - TransparentFX
