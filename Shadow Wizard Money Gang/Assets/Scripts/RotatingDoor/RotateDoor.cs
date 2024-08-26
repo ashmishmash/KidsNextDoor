@@ -6,11 +6,11 @@ public class RotateDoor : MonoBehaviour
 {
     public GameObject Zone;
     public float roateDistance;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Laser")) 
         {
-            Debug.Log("Turn Door");
+            //Debug.Log("Turn Door");
             Zone.transform.Rotate(0, 0, roateDistance);
         }
     }

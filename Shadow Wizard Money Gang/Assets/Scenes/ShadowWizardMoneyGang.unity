@@ -3707,7 +3707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zone: {fileID: 1664801714}
-  roateDistance: 90
+  roateDistance: 3
 --- !u!65 &439768458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7353,6 +7353,8 @@ MonoBehaviour:
   DoorFace: {fileID: 1297876251}
   PointTwoOpen: 0
   ConfirmPoint: {fileID: 538448159}
+  Timer: 0
+  MaxTime: 1.5
 --- !u!54 &879162825
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9584,7 +9586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zone: {fileID: 151340732}
-  roateDistance: 90
+  roateDistance: 3
 --- !u!1 &1084835261
 GameObject:
   m_ObjectHideFlags: 0
@@ -10525,7 +10527,7 @@ Transform:
   m_GameObject: {fileID: 1229529466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.08, y: 0.188, z: -48.03}
+  m_LocalPosition: {x: -6.08, y: 0.188, z: 37}
   m_LocalScale: {x: 0.58118045, y: 0.58118045, z: 0.58118045}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13113,7 +13115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zone: {fileID: 1558384603}
-  roateDistance: 90
+  roateDistance: 3
 --- !u!1001 &1505759053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14819,6 +14821,8 @@ MonoBehaviour:
   DoorFace: {fileID: 2138356621}
   PointThreeOpen: 0
   ConfirmPoint: {fileID: 1662456094}
+  Timer: 0
+  MaxTime: 1.5
 --- !u!54 &1759500524
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17477,6 +17481,8 @@ MonoBehaviour:
   DoorFace: {fileID: 1084835261}
   PointOneOpen: 0
   ConfirmPoint: {fileID: 1465715287}
+  Timer: 0
+  MaxTime: 1.5
 --- !u!54 &2116461206
 Rigidbody:
   m_ObjectHideFlags: 0

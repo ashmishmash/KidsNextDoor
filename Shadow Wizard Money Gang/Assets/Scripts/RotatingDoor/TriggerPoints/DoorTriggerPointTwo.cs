@@ -7,14 +7,21 @@ public class DoorTriggerPointTwo : MonoBehaviour
     public GameObject DoorFace;
     public bool PointTwoOpen;
     public GameObject ConfirmPoint;
+    public float Timer;
+    public float MaxTime;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == DoorFace)
         {
-            //Debug.Log("trig2");
-            PointTwoOpen = true;
+            Timer += Time.deltaTime;
             ConfirmPoint.SetActive(true);
+
+            if (Timer > MaxTime) 
+            {
+                PointTwoOpen = true;
+            }
+            //Debug.Log("trig2");
         }
     }
 
@@ -24,6 +31,7 @@ public class DoorTriggerPointTwo : MonoBehaviour
         {
             PointTwoOpen = false;
             ConfirmPoint.SetActive(false);
+            Timer = 0;  
         }
     }
 }
