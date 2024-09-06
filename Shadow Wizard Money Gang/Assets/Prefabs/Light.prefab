@@ -544,8 +544,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.438047, z: 1}
-  m_Center: {x: 0, y: 0.7190244, z: 0}
+  m_Size: {x: 1, y: 32.788944, z: 1}
+  m_Center: {x: 0, y: 15.894481, z: 0}
 --- !u!54 &3800860503908127037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -586,3 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 5529292590047026821}
+  TimeToWait: 0
+  maxLight: 0
+  MidLight: 0
+  minLight: 0
