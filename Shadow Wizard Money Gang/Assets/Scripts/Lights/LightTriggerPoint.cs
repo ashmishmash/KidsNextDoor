@@ -6,10 +6,10 @@ using UnityEngine;
 public class LightTriggerPoint : MonoBehaviour
 {
     public Light Light;
-    public float TimeToWait;
-    public float maxLight;
-    public float MidLight;
-    public float minLight;
+    public float TimeToWait = 5;
+    public float maxLight = 20;
+    public float MidLight = 10;
+    public float minLight = 5;
 
 
     private void OnTriggerEnter(Collider other)
