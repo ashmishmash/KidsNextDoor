@@ -10,7 +10,7 @@ public class SymbolPuzzle : MonoBehaviour
     public Material Green;
     public Material White;
     
-    public MeshRenderer meshRenderer;
+    public Renderer Renderer;
 
     public GameObject keyDoor;
   
@@ -66,17 +66,17 @@ public class SymbolPuzzle : MonoBehaviour
 
     public IEnumerator FlashGreen()
     {
-        meshRenderer.material.color = Green.color;
+        Renderer.material.color = Green.color;
         yield return new WaitForSeconds(2);
-        meshRenderer.material.color = White.color;
+        Renderer.material.color = White.color;
 
     }
 
     public IEnumerator FlashRed()
     {
-        meshRenderer.material.color = Red.color;
+        Renderer.material.color = Red.color;
         yield return new WaitForSeconds(2);
-        meshRenderer.material.color = White.color;
+        Renderer.material.color = White.color;
 
     }
 }
