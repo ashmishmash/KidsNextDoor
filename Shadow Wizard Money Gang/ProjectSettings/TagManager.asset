@@ -11,6 +11,8 @@ TagManager:
   - DoorFace
   - Switch
   - Door
+  - Wrong Symbol
+  - Right Symbol
   layers:
   - Default
   - TransparentFX
