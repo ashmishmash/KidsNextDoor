@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class LightTriggerPoint : MonoBehaviour
+public class FlameOn : MonoBehaviour
 {
     public Light Light;
-     public GameObject fire;
-      float TimeToWait = 5f;
-      float maxLight = 20f;
-      float MidLight = 10f;
-      float minLight = 5f;
-    
+    public GameObject fire;
+    public LightTriggerPoint LightTriggerPoint;
+    public GameObject Trigger;
+    float TimeToWait = 5f;
+    float maxLight = 20f;
+    float MidLight = 10f;
+    float minLight = 5f;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (Trigger == null)
         {
-            StartCoroutine(FlameOn());
-            //Destroy(this.gameObject);
+            StartCoroutine(LightUp());
         }
     }
 
 
-    public IEnumerator FlameOn() 
+
+    public IEnumerator LightUp()
     {
         Light.enabled = true;
         fire.SetActive(true);
@@ -34,5 +35,4 @@ public class LightTriggerPoint : MonoBehaviour
         Light.intensity = minLight;
         yield return new WaitForSeconds(TimeToWait);
     }
-    
 }
