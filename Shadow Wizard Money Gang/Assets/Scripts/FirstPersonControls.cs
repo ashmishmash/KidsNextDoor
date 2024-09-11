@@ -253,5 +253,8 @@ public class FirstPersonControls : MonoBehaviour
         currentSpeed = moveSpeed;
     }
 
+    public bool count1 = false;
+    public bool count2 = false;
+    public bool count3 = false;
 
 }

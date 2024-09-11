@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class SymbolPuzzle : MonoBehaviour
 {
-    public int count  = 0;
+    //public bool count1 = false;
+    //public bool count2 = false;
+    //public bool count3 = false;
+    public FirstPersonControls firstPersonControls;
     public Material Red;
     public Material Green;
     public Material White;
@@ -17,66 +20,65 @@ public class SymbolPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Collision detected");
-       switch (count)
-        {
-            case 0:
-                if (this.gameObject.tag == ("Symbol 1"))
-                {
-                    Debug.Log("Yay symbol 1");
-                    count += 1;
-                    FlashGreen();
-                }
-                else if (this.gameObject.tag == ("Wrong Symbol"))
-                {
-                    count = 0;
-                    FlashRed();
-                }
-                break;
-            case 1:
-                if (this.gameObject.tag == ("Symbol 2"))
-                {
-                    count += 1;
-                    FlashGreen();
-                }
-                else if (this.gameObject.tag == ("Wrong Symbol"))
-                {
-                    count = 0;
-                    FlashRed();
-                }
-                break;
-            case 2:
-                if (this.gameObject.tag == ("Symbol 3"))
-                {
-                    count += 1;
-                    FlashGreen();
-                }
-                else if (this.gameObject.tag == ("Wrong Symbol"))
-                {
-                    count = 0;
-                    FlashRed();
-                }
-                break;
-            case 3:
+       if (collider.CompareTag("Player"))
+       {
+            Debug.Log("player collided");
+            
+            if (gameObject.CompareTag("Symbol1") && firstPersonControls.count1 == false)
+            {
+                Debug.Log("Yay symbol 1");
+                firstPersonControls.count1 = true;
+                StartCoroutine(FlashGreen());
+                Debug.Log("count1 is true");
+            }
+            else if (gameObject.CompareTag("Symbol2") && firstPersonControls.count1 == true && firstPersonControls.count2 == false)
+            {
+                Debug.Log("Yay symbol 2");
+                firstPersonControls.count2 = true;
+                Debug.Log("count2 is true");
+                StartCoroutine(FlashGreen());
+            }
+            else if (gameObject.CompareTag("Symbol3") && firstPersonControls.count3 == false && firstPersonControls.count1 == true && firstPersonControls.count2 == true)
+            {
+                Debug.Log("Yay symbol 3");
+                firstPersonControls.count3 = true;
+                //Debug.Log(count);
+                StartCoroutine(FlashGreen());
+            }
+            else 
+            {
+                Debug.Log("Boo wrong symbol");
+                firstPersonControls.count1 = false;
+                firstPersonControls.count2 = false;
+                firstPersonControls.count3 = false;
+                //Debug.Log(count);
+                StartCoroutine(FlashRed());
+            }
+
+            if (firstPersonControls.count3 == true)
+            {
+                Debug.Log("UNLOCKED");
                 //open the key box and float key toward player
                 keyDoor.SetActive(false);
-                break;
+            }
+       
         }
+
     }
 
     public IEnumerator FlashGreen()
     {
-        Renderer.material.color = Green.color;
+        Renderer.material = Green;
         yield return new WaitForSeconds(2);
-        Renderer.material.color = White.color;
+        Renderer.material = White;
 
     }
 
     public IEnumerator FlashRed()
     {
-        Renderer.material.color = Red.color;
+        Renderer.material = Red;
         yield return new WaitForSeconds(2);
-        Renderer.material.color = White.color;
+        Renderer.material = White;
 
     }
 }

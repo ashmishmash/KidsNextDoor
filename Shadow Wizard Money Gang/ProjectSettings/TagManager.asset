@@ -16,6 +16,9 @@ TagManager:
   - Symbol 2
   - Symbol 3
   - Right Symbol
+  - Symbol1
+  - Symbol2
+  - Symbol3
   layers:
   - Default
   - TransparentFX

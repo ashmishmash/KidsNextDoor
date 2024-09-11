@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 564358518162804572}
   m_Layer: 0
   m_Name: Symbol1
-  m_TagString: Symbol 1
+  m_TagString: Symbol1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44c3f0ce91e58d4ea31a539d3217d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
+  firstPersonControls: {fileID: 0}
   Red: {fileID: 2100000, guid: ade1ddbfcb2de86428cef67450d1d6ef, type: 2}
   Green: {fileID: 2100000, guid: 7a758b5f116ea764d930c41a0680a55a, type: 2}
   White: {fileID: 2100000, guid: c8835d9423acab84aadb68a0900aaab9, type: 2}
-  meshRenderer: {fileID: 8993459148096393769}
+  Renderer: {fileID: 8993459148096393769}
   keyDoor: {fileID: 0}
 --- !u!1 &8729507153611056539
 GameObject:
