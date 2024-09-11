@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
 {
+   
+    public int count = 0;
 
     [Header("MOVEMENT SETTINGS")]
     [Space(5)]
@@ -253,8 +255,6 @@ public class FirstPersonControls : MonoBehaviour
         currentSpeed = moveSpeed;
     }
 
-    public bool count1 = false;
-    public bool count2 = false;
-    public bool count3 = false;
+    
 
 }
