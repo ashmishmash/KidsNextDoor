@@ -8,9 +8,9 @@ public class LightTriggerPoint : MonoBehaviour
     public Light Light;
      public GameObject fire;
       float TimeToWait = 5f;
-      float maxLight = 20f;
-      float MidLight = 10f;
-      float minLight = 5f;
+      float maxLight = 40f;
+      float MidLight = 30f;
+      float minLight = 20f;
     
 
     private void OnTriggerEnter(Collider other)
