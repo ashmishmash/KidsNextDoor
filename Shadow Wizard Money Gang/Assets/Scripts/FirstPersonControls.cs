@@ -47,7 +47,7 @@ public class FirstPersonControls : MonoBehaviour
     public bool isCrouching = false; //check if crouch
 
     //Variables 
-    float currentSpeed;
+    public float currentSpeed;
    
     public UnityEngine.UI.Image[] TutorialImages;
     public UnityEngine.UI.Image tutorialImage;
