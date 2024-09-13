@@ -10,7 +10,7 @@ public class LightTriggerPoint : MonoBehaviour
       float TimeToWait = 5f;
       float maxLight = 40f;
       float MidLight = 30f;
-      float minLight = 20f;
+      float minLight = 25f;
     
 
     private void OnTriggerEnter(Collider other)
