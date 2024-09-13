@@ -56,7 +56,7 @@ Material:
     - _Toon_Ramp_Offset_Point: 0.65
     m_Colors:
     - Toon_Ramp_Tint: {r: 1, g: 0.98679245, b: 0.98679245, a: 1}
-    - _Color: {r: 0.13962269, g: 0.018704172, b: 0.02241974, a: 1}
+    - _Color: {r: 0.5698112, g: 0.5609202, b: 0.5278817, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7399075478761618271
 MonoBehaviour:
