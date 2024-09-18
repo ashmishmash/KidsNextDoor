@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -8,9 +9,6 @@ using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
 {
-   
-    public int count = 0;
-
     [Header("MOVEMENT SETTINGS")]
     [Space(5)]
     // Public variables to set movement and look speed, and the player camera
@@ -47,9 +45,15 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchSpeed = 1.5f; //make slow
     public bool isCrouching = false; //check if crouch
 
-    //Variables 
+
+    [Header("INTERACT SETTINGS")]
+    [Space(5)]
     
-   
+
+    //Variables 
+    public int count = 0;
+    public int keyCounter = 0;
+
     public UnityEngine.UI.Image[] TutorialImages;
     public UnityEngine.UI.Image tutorialImage;
 
@@ -90,7 +94,12 @@ public class FirstPersonControls : MonoBehaviour
         //Subscribe to the sprint input event
         playerInput.Player.Sprint.performed += ctx => Sprint(); // Call the Sprint method when crouch input is performed
         playerInput.Player.Sprint.canceled += ctx => Walk();
+
+        // Subscribe to the interact input event
+        playerInput.Player.Interact.performed += ctx => Interact(); // Interact 
     }
+
+   
 
     private void Update()
     {
@@ -256,6 +265,25 @@ public class FirstPersonControls : MonoBehaviour
         currentSpeed = moveSpeed;
     }
 
-    
+    private void Interact()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, pickUpRange))
+        {
+            if (hit.collider.CompareTag("Key")) // check if its a key
+            {
+                //enable particle effect of some kind 
+                //zoom in on key for a while
+                keyCounter += 1; //will have to make some sort of identifier if we are colour coding
+            }
+
+           //else if for narrative objects to zoom
+        }
+    }
+
+
+
 
 }
