@@ -5,26 +5,28 @@ using UnityEngine;
 public class KeyStuff : MonoBehaviour
 {
     public FirstPersonControls firstPersonControls;
+    public GameObject KeyToEnable;
+    public GameObject DoorToOpen;
 
     // Start is called before the first frame update
-    void Start()
+   
+   
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 2f))
+        if (other.CompareTag("Player") && (firstPersonControls.keyCounter > 0))
         {
-            if (hit.collider.CompareTag("Player") && (firstPersonControls.keyCounter > 0)) // is player near door with key
-            {
-                //unlock door
-            }
+            firstPersonControls.keyCounter -= 1;
+            KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
+            StartCoroutine(OpenDoor()); //unlock door
         }
     }
+
+    public IEnumerator OpenDoor()
+    {
+        yield return new WaitForSeconds(3f);
+        DoorToOpen.SetActive(false);
+    }
+
+
 
 }

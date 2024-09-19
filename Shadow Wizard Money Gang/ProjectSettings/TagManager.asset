@@ -12,13 +12,10 @@ TagManager:
   - Switch
   - Door
   - Wrong Symbol
-  - Symbol 1
-  - Symbol 2
-  - Symbol 3
-  - Right Symbol
   - Symbol1
   - Symbol2
   - Symbol3
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -27,7 +24,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Player
   - 
   - 
   - 

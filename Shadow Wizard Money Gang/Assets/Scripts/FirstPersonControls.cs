@@ -54,8 +54,8 @@ public class FirstPersonControls : MonoBehaviour
     public int count = 0;
     public int keyCounter = 0;
 
-    public UnityEngine.UI.Image[] TutorialImages;
-    public UnityEngine.UI.Image tutorialImage;
+   // public UnityEngine.UI.Image[] TutorialImages;
+   // public UnityEngine.UI.Image tutorialImage;
 
     private void Awake()
     {
@@ -267,16 +267,25 @@ public class FirstPersonControls : MonoBehaviour
 
     private void Interact()
     {
+        Debug.Log("Tried to Interact");
+
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
+        
 
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
             if (hit.collider.CompareTag("Key")) // check if its a key
             {
+               // Debug.Log("hit key");
+
                 //enable particle effect of some kind 
                 //zoom in on key for a while
+
                 keyCounter += 1; //will have to make some sort of identifier if we are colour coding
+                //Debug.Log(keyCounter);
+                Destroy(hit.collider.gameObject);
+
             }
 
            //else if for narrative objects to zoom
