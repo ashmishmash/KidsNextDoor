@@ -183,37 +183,22 @@ public class FirstPersonControls : MonoBehaviour
 
     public void PickUpObject()
     {
-        // Check if we are already holding an object
-        if (heldObject != null)
-        {
-            heldObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
-            heldObject.transform.parent = null;
-            holdingLaser = false;
-        }
-
-        // Perform a raycast from the camera's position forward
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
-
-        // Debugging: Draw the ray in the Scene view
-        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
 
 
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
+            if (hit.collider.CompareTag("Key")) // check if its a key
+            {
+                //enable particle effect of some kind 
+                //zoom in on key for a while
+
+                keyCounter += 1; //will have to make some sort of identifier if we are colour coding
+                Destroy(hit.collider.gameObject);
+            }
             // Check if the hit object has the tag "PickUp"
-            if (hit.collider.CompareTag("PickUp"))
-            {
-                // Pick up the object
-                heldObject = hit.collider.gameObject;
-                heldObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
-
-                // Attach the object to the hold position
-                heldObject.transform.position = holdPosition.position;
-                heldObject.transform.rotation = holdPosition.rotation;
-                heldObject.transform.parent = holdPosition;
-            }
-            else if (hit.collider.CompareTag("Gun"))
+            else if (hit.collider.CompareTag("PickUp")) //narrative elements
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
@@ -224,8 +209,9 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
 
-                holdingLaser = true;
+                //CHANGE TO ZOOM IN - DONT DROP LASER
             }
+            
         }
     }
 
@@ -268,23 +254,7 @@ public class FirstPersonControls : MonoBehaviour
     private void Interact()
     {
        
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        RaycastHit hit;
-        
-
-        if (Physics.Raycast(ray, out hit, pickUpRange))
-        {
-            if (hit.collider.CompareTag("Key")) // check if its a key
-            {
-                //enable particle effect of some kind 
-                //zoom in on key for a while
-
-                keyCounter += 1; //will have to make some sort of identifier if we are colour coding
-                Destroy(hit.collider.gameObject);
-            }
-
-           //else if for narrative objects to zoom
-        }
+       
     }
 
 

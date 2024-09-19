@@ -886,6 +886,7 @@ GameObject:
   - component: {fileID: 558107869}
   - component: {fileID: 558107868}
   - component: {fileID: 558107867}
+  - component: {fileID: 558107871}
   m_Layer: 0
   m_Name: Dungeon Trigger
   m_TagString: Untagged
@@ -978,6 +979,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558107871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558107866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dd9346167734741ab3d70fe1373b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &924600390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1062,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8113208, g: 0.5022112, b: 0.03520817, a: 1}
   m_Intensity: 29.72
-  m_Range: 22.3
+  m_Range: 21.56
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2109,14 +2122,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792432423}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.39190271, z: -0, w: -0.9200067}
-  m_LocalPosition: {x: 24.88, y: 0.46, z: 10.9}
+  m_LocalRotation: {x: -0, y: 0.648616, z: -0, w: -0.7611158}
+  m_LocalPosition: {x: 33.26, y: 0.46, z: 5.62}
   m_LocalScale: {x: 0.58118045, y: 0.58118045, z: 0.58118045}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1891572830}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -406.146, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -440.875, z: 0}
 --- !u!1001 &1875922274
 PrefabInstance:
   m_ObjectHideFlags: 0
