@@ -949,7 +949,7 @@ MonoBehaviour:
   Laser: {fileID: 51615885}
   Letter: {fileID: 535743428}
   characterController: {fileID: 1792432425}
-  controls: {fileID: 1792432424}
+  controls: {fileID: 0}
 --- !u!4 &542845050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7174161408470364496, guid: c613e8d344a92344abf48bec3f64904e,
