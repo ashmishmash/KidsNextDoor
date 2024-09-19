@@ -1170,7 +1170,6 @@ GameObject:
   m_Component:
   - component: {fileID: 926245197}
   - component: {fileID: 926245196}
-  - component: {fileID: 926245195}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1178,26 +1177,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!154 &926245195
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926245194}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 767753c3d909a024fac18505efdcf3ff, type: 2}
-  m_EnableTreeColliders: 1
 --- !u!218 &926245196
 Terrain:
   m_ObjectHideFlags: 0
