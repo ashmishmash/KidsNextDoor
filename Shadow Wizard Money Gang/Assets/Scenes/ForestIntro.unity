@@ -1744,10 +1744,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 2.5320752, y: 2.9888446, z: 2.3442717}
-  m_Center: {x: 0.12873894, y: -0.716949, z: 0.078142196}
+  m_Size: {x: 1.7239594, y: 3.3117619, z: 2.3442717}
+  m_Center: {x: -0.14475456, y: 0.24528834, z: 0.07814218}
 --- !u!4 &1505776831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4496495976480128672, guid: dcd27eb96b150cb48a4b5c6a97dd34f2,
@@ -1768,6 +1768,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.502753
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.2993028
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.6581017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.09460483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.078142874
+      objectReference: {fileID: 0}
     - target: {fileID: 2701462787591967688, guid: 91b219c09f65fb04da68eea64e2f41b9,
         type: 3}
       propertyPath: m_Size.x
@@ -1865,6 +1895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5073760049081543128, guid: 91b219c09f65fb04da68eea64e2f41b9, type: 3}
+    - {fileID: 2637181131634190104, guid: 91b219c09f65fb04da68eea64e2f41b9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
