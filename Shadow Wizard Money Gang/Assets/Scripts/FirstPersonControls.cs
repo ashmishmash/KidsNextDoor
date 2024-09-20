@@ -52,7 +52,9 @@ public class FirstPersonControls : MonoBehaviour
 
     //Variables 
     public int count = 0;
+
     public int keyCounter = 0;
+    public bool isSolved = false;
 
    // public UnityEngine.UI.Image[] TutorialImages;
    // public UnityEngine.UI.Image tutorialImage;

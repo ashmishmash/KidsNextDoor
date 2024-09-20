@@ -14,13 +14,10 @@ public class SymbolPuzzle : MonoBehaviour
 
     public GameObject keyDoor;
 
-    public GameObject[] Blocks;
-
-    private bool isSolved = false;
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (isSolved == false)
+        if (firstPersonControls.isSolved == false)
         {
             if (collider.CompareTag("Player"))
             {
@@ -41,26 +38,17 @@ public class SymbolPuzzle : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Boo wrong symbol");
+                    //Debug.Log("Boo wrong symbol");
                     firstPersonControls.count = 0;
                     StartCoroutine(FlashRed());
                 }
 
                 if (firstPersonControls.count == 3)
                 {
-                    Debug.Log("UNLOCKED");
+                    //Debug.Log("UNLOCKED");
                     //open the key box and float key toward player
                     keyDoor.SetActive(false);
-                    isSolved = true;
-                    foreach (GameObject obj in Blocks)
-                    {
-                        Renderer renderer = obj.GetComponent<Renderer>();
-                        if (renderer != null)
-                        {
-                            renderer.material.color = Green.color; // Set the color to match the switch material color
-
-                        }
-                    }
+                    firstPersonControls.isSolved = true;
                 }
 
             }

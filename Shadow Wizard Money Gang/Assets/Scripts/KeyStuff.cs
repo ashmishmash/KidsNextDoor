@@ -23,7 +23,7 @@ public class KeyStuff : MonoBehaviour
 
     public IEnumerator OpenDoor()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         DoorToOpen.SetActive(false);
     }
 
