@@ -6,6 +6,7 @@ public class UiManagmentScript : MonoBehaviour
 {
     public FirstPersonControls FirstPersonControls;
     public GameObject CrouchImage;
+    public GameObject ShootImage;
 
     private void Update()
     {
@@ -19,5 +20,15 @@ public class UiManagmentScript : MonoBehaviour
         {
         CrouchImage.SetActive(false);
         }
+
+        /*if(FirstPersonControls.canShoot == true) 
+        {
+        ShootImage.SetActive(true);
+        }
+
+        if(FirstPersonControls.canShoot == false) 
+        {
+            ShootImage.SetActive(false);
+        }*/
     }
 }
