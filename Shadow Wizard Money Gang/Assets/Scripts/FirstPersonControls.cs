@@ -29,6 +29,8 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public GameObject laserPrefab; //laser beam prefab
     public bool isLaserOn = false;
+    public bool canShoot;
+    public bool shooting;
     private bool holdingLaser = true;
 
     [Header("PICKING UP SETTINGS")]
@@ -166,21 +168,25 @@ public class FirstPersonControls : MonoBehaviour
 
     public void Laser()
     {
-        if (holdingLaser == true)
+        if (holdingLaser == true && canShoot == true) 
         {
-            if (isLaserOn)
+            if (isLaserOn) 
             {
                 //Turn off laser
                 laserPrefab.SetActive(false);
                 isLaserOn = false;
+                shooting = false;
             }
             else
             {
                 //Turn on laser
                 laserPrefab.SetActive(true);
                 isLaserOn = true;
+                shooting = true;
             }
         }
+
+       
     }
 
     public void PickUpObject()
