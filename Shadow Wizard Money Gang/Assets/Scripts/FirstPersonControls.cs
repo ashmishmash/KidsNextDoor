@@ -196,6 +196,7 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(true);
                 isLaserOn = true;
                 shooting = true;
+                MyCo = Timer();
                 StartCoroutine(MyCo);
             }
         }
