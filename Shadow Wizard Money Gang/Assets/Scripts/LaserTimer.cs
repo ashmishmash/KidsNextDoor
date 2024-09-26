@@ -15,17 +15,17 @@ public class LaserTimer : MonoBehaviour
        if (FirstPersonControls.shooting == true) 
         {
             //Debug.Log("Shooting");
-            StartCoroutine(Timer());
+           // StartCoroutine(Timer());
         }
 
        if(FirstPersonControls.shooting == false) 
         {
-        StopCoroutine(Timer());
+        //StopCoroutine(Timer());
         }
     }
 
 
-    public IEnumerator Timer() 
+    /*public IEnumerator Timer() 
     {
         
         {
@@ -47,5 +47,5 @@ public class LaserTimer : MonoBehaviour
             StopCoroutine(Timer());
         }
        
-    }
+    }*/
 }

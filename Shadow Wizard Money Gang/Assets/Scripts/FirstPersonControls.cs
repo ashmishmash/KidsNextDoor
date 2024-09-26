@@ -32,6 +32,10 @@ public class FirstPersonControls : MonoBehaviour
     public bool canShoot;
     public bool shooting;
     private bool holdingLaser = true;
+    public GameObject LaserImage1;
+    public GameObject LaserImage2;
+    public GameObject LaserImage3;
+
 
     [Header("PICKING UP SETTINGS")]
     [Space(5)]
@@ -103,7 +107,12 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.Interact.performed += ctx => Interact(); // Interact 
     }
 
-   
+
+    private void Start()
+    {
+     
+    }
+
 
     private void Update()
     {
@@ -166,6 +175,8 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
+   
+
     public void Laser()
     {
         if (holdingLaser == true && canShoot == true) 
@@ -176,6 +187,7 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(false);
                 isLaserOn = false;
                 shooting = false;
+                StopCoroutine(Timer());
             }
             else
             {
@@ -183,10 +195,34 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(true);
                 isLaserOn = true;
                 shooting = true;
+                StartCoroutine(Timer());
+                
             }
         }
 
        
+    }
+    public IEnumerator Timer()
+    {
+
+        {
+            yield return new WaitForSeconds(4f);
+            LaserImage1.SetActive(false);
+            yield return new WaitForSeconds(3f);
+            LaserImage2.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            LaserImage3.SetActive(false);
+            canShoot = false;
+            isLaserOn = false;
+            shooting = false;
+            laserPrefab.SetActive(false);
+            yield return new WaitForSeconds(3f);
+            canShoot = true;
+            LaserImage1.SetActive(true);
+            LaserImage2.SetActive(true);
+            LaserImage3.SetActive(true);
+        }
+
     }
 
     public void PickUpObject()
