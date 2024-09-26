@@ -213,15 +213,10 @@ public class FirstPersonControls : MonoBehaviour
 
         {
             yield return new WaitForSeconds(4f);
-            batteryOneGone = true;
             LaserImage1.SetActive(false);
             yield return new WaitForSeconds(3f);
-            batteryOneGone = false;
-            batteryTwoGone = true;
             LaserImage2.SetActive(false);
             yield return new WaitForSeconds(2f);
-            batteryThreeGone = true;
-            batteryTwoGone = false;
             LaserImage3.SetActive(false);
             canShoot = false;
             isLaserOn = false;
