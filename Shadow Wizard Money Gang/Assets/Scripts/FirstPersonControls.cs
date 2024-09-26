@@ -32,6 +32,9 @@ public class FirstPersonControls : MonoBehaviour
     public bool canShoot;
     public bool shooting;
     private bool holdingLaser = true;
+    public bool batteryOneGone;
+    public bool batteryTwoGone;
+    public bool batteryThreeGone;
     public GameObject LaserImage1;
     public GameObject LaserImage2;
     public GameObject LaserImage3;
@@ -120,6 +123,7 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+        TimerAleration();
     }
 
     public void Move()
@@ -189,6 +193,7 @@ public class FirstPersonControls : MonoBehaviour
                 isLaserOn = false;
                 shooting = false;
                 StopCoroutine(MyCo);
+               
             }
             else
             {
@@ -208,10 +213,15 @@ public class FirstPersonControls : MonoBehaviour
 
         {
             yield return new WaitForSeconds(4f);
+            batteryOneGone = true;
             LaserImage1.SetActive(false);
             yield return new WaitForSeconds(3f);
+            batteryOneGone = false;
+            batteryTwoGone = true;
             LaserImage2.SetActive(false);
             yield return new WaitForSeconds(2f);
+            batteryThreeGone = true;
+            batteryTwoGone = false;
             LaserImage3.SetActive(false);
             canShoot = false;
             isLaserOn = false;
@@ -224,6 +234,24 @@ public class FirstPersonControls : MonoBehaviour
             LaserImage3.SetActive(true);
         }
 
+    }
+
+    public void TimerAleration() 
+    {
+        if (batteryOneGone == true) 
+        {
+            Debug.Log("stagec 1");
+        }
+
+        if (batteryTwoGone == true) 
+        {
+            Debug.Log("stagec 2");
+        }
+
+        if(batteryThreeGone == true) 
+        {
+            Debug.Log("stagec 3");
+        }
     }
 
     public void PickUpObject()
