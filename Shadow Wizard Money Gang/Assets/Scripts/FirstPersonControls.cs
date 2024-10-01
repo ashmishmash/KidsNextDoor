@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -108,6 +109,7 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the interact input event
         playerInput.Player.Interact.performed += ctx => Interact(); // Interact 
+
     }
 
 
@@ -138,11 +140,16 @@ public class FirstPersonControls : MonoBehaviour
         characterController.Move(move * currentSpeed * Time.deltaTime);
     }
 
+  
     public void LookAround()
     {
+       
         // Get horizontal and vertical look inputs and adjust based on sensitivity
         float LookX = lookInput.x * lookSpeed;
         float LookY = lookInput.y * lookSpeed;
+
+        //float LookX = lookInput.x * currentlookspeed;
+        //float LookY = lookInput.y * currentlookspeed;
 
         // Horizontal rotation: Rotate the player object around the y-axis
         transform.Rotate(0, LookX, 0);
@@ -156,7 +163,7 @@ public class FirstPersonControls : MonoBehaviour
         // Apply the clamped vertical rotation to the player camera
         playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
 
-
+        
     }
 
     public void ApplyGravity()
@@ -262,7 +269,7 @@ public class FirstPersonControls : MonoBehaviour
                 //enable particle effect of some kind 
                 //zoom in on key for a while
 
-                keyCounter += 1; //will have to make some sort of identifier if we are colour coding
+                keyCounter =+ 1; //will have to make some sort of identifier if we are colour coding
                 Destroy(hit.collider.gameObject);
             }
             // Check if the hit object has the tag "PickUp"
@@ -326,6 +333,5 @@ public class FirstPersonControls : MonoBehaviour
     }
 
 
-
-
+   
 }
