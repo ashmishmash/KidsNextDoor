@@ -28,7 +28,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public int inputCount;
     public GameObject pauseImage;
-    public FirstPersonControls firstPersonControls;
+    //public FirstPersonControls firstPersonControls
+    public CharacterController characterController;
     
 
     private void Pause()
@@ -55,8 +56,9 @@ public class PauseMenuScript : MonoBehaviour
         }*/
 
         pauseImage.SetActive(true);
-        firstPersonControls.enabled = false;
+        //firstPersonControls.enabled = false;
+        characterController.enabled = false;
         Time.timeScale = 0;
-        firstPersonControls.canShoot = false;
+        //firstPersonControls.canShoot = false;
     }
 }
