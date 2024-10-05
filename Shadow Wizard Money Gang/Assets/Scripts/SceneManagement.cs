@@ -7,6 +7,8 @@ public class SceneManagement : MonoBehaviour
 {
  public void StartGame()
     {
+        //play door animation
+        //wait a few seconds
         SceneManager.LoadSceneAsync(1);
     }
 
