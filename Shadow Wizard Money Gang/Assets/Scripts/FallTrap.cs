@@ -6,6 +6,6 @@ public class FallTrap : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 }
