@@ -4,24 +4,88 @@ using UnityEngine;
 
 public class LaserTimer : MonoBehaviour
 {
-   public FirstPersonControls FirstPersonControls;
+    [Header("Other Scripts")]
+    [Space(2)]
+    public FirstPersonControls FirstPersonControls;
+    public Timer timer;
+
+    [Header("laser")]
+    [Space(1)]
+
     public GameObject Laser;
+    
+
+    [Header("Power")]
+    [Space(4)]
+    public int LaserPower;
+    public int MaxLaserPower;
+    public int PowerSubtraction;
+    public bool StablePowerLevel;
+
+  
+
+    [Header("Images")]
+    [Space(3)]
+
     public GameObject LaserImage1;
     public GameObject LaserImage2;
     public GameObject LaserImage3;
 
-    private void Update()
+    private IEnumerator MyCo;
+
+    private void Awake()
     {
-       if (FirstPersonControls.shooting == true) 
+        //MyCo = PowerBack();
+        StablePowerLevel = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (FirstPersonControls.isLaserOn)
         {
-            //Debug.Log("Shooting");
-           // StartCoroutine(Timer());
+            //Debug.Log("Laser On");
+            LaserPower -= PowerSubtraction;
         }
 
-       if(FirstPersonControls.shooting == false) 
+        if (LaserPower == 150)
         {
-        //StopCoroutine(Timer());
+            LaserImage1.SetActive(false);
         }
+
+        if (LaserPower == 70)
+        {
+            LaserImage2.SetActive(false);
+        }
+
+        if (LaserPower == 0)
+        {
+            LaserImage3.SetActive(false);
+        }
+
+
+        if (LaserPower == 0)
+        {
+            PowerSubtraction = 0;
+            FirstPersonControls.canShoot = false;
+            FirstPersonControls.isLaserOn = false;
+            FirstPersonControls.shooting = false;
+            Laser.SetActive(false);
+            StablePowerLevel = false;
+            timer.enabled = true;
+        }
+
+
+
+        if (LaserPower == MaxLaserPower)
+        {
+            LaserImage1.SetActive(true);
+            LaserImage2.SetActive(true);
+            LaserImage3.SetActive(true);
+            //StablePowerLevel = true;
+        }
+
+        
+
     }
 
 
@@ -48,4 +112,15 @@ public class LaserTimer : MonoBehaviour
         }
        
     }*/
+
+    public IEnumerator PowerBack() 
+    {
+            //Debug.Log("p");
+            yield return new WaitForSeconds(5f);
+            FirstPersonControls.canShoot = true;
+            PowerSubtraction = 1;
+            yield return new WaitForSeconds(0);
+            LaserPower = MaxLaserPower;
+            StablePowerLevel = true; 
+    }
 }

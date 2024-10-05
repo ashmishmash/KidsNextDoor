@@ -115,7 +115,7 @@ public class FirstPersonControls : MonoBehaviour
 
     private void Start()
     {
-        MyCo = Timer();
+       // MyCo = Timer();
     }
 
 
@@ -199,7 +199,7 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(false);
                 isLaserOn = false;
                 shooting = false;
-                StopCoroutine(MyCo);
+                //StopCoroutine(MyCo);
                
             }
             else
@@ -208,8 +208,8 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(true);
                 isLaserOn = true;
                 shooting = true;
-                MyCo = Timer();
-                StartCoroutine(MyCo);
+                //MyCo = Timer();
+                //StartCoroutine(MyCo);
             }
         }
 
