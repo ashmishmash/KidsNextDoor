@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public Animator pauseAnimator;
  public void StartGame()
     {
         //play door animation
@@ -20,5 +21,6 @@ public class SceneManagement : MonoBehaviour
     public void Options()
     {
         //open options panel
+        pauseAnimator.enabled = true;
     }
 }
