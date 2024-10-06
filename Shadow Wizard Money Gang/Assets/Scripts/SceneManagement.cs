@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    public Animator pauseAnimator;
+    public Animator tscrollAnim;
+    public Animator bscrollAnim;
+    public Animator pageAnim;
+    public Animator pawsAnim;
+
+    public Animator doorAnimator;
+    public Animator cameraAnimator;
+    public GameObject OptionsMenu;
  public void StartGame()
     {
         Debug.Log("start");
         //play door animation
+        doorAnimator.enabled = true;
+        cameraAnimator.SetBool("isStart", true);
         //wait a few seconds
-        SceneManager.LoadSceneAsync(1);
+        StartCoroutine(WaitDoor());
         
     }
 
@@ -23,6 +32,18 @@ public class SceneManagement : MonoBehaviour
     public void Options()
     {
         //open options panel
-        pauseAnimator.enabled = true;
+        OptionsMenu.SetActive(true);
+        tscrollAnim.enabled = true;
+        bscrollAnim.enabled = true;
+        pageAnim.enabled = true;
+        pawsAnim.enabled = true;
+
+
+    }
+
+    public IEnumerator WaitDoor()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadSceneAsync(1);
     }
 }
