@@ -14,12 +14,21 @@ public class SceneManagement : MonoBehaviour
     public Animator cameraAnimator;
     public GameObject OptionsMenu;
 
+    public GameObject startbutton;
+    public GameObject quitbutton;
+    public GameObject optionbutton;
+
     public StartScreemAudio StartScreemAudio;
  public void StartGame()
     {
         Debug.Log("start");
+        
+
         //play door animation
         doorAnimator.enabled = true;
+        startbutton.SetActive(false);
+        quitbutton.SetActive(false);
+        optionbutton.SetActive(false);
         cameraAnimator.SetBool("isStart", true);
         //wait a few seconds
         StartCoroutine(WaitDoor());
@@ -47,5 +56,12 @@ public class SceneManagement : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadSceneAsync(1);
+    }
+
+    public void CloseOptions()
+    {
+        //close options panel
+        OptionsMenu.SetActive(false);
+        StartScreemAudio.StartScreenPlaying = true;
     }
 }
