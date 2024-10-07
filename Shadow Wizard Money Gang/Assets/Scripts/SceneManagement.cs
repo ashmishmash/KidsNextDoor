@@ -13,6 +13,8 @@ public class SceneManagement : MonoBehaviour
     public Animator doorAnimator;
     public Animator cameraAnimator;
     public GameObject OptionsMenu;
+
+    public StartScreemAudio StartScreemAudio;
  public void StartGame()
     {
         Debug.Log("start");
@@ -37,7 +39,7 @@ public class SceneManagement : MonoBehaviour
         bscrollAnim.enabled = true;
         pageAnim.enabled = true;
         pawsAnim.enabled = true;
-
+        StartScreemAudio.StartScreenPlaying = false;
 
     }
 
