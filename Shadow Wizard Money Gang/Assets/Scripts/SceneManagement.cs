@@ -19,10 +19,11 @@ public class SceneManagement : MonoBehaviour
     public GameObject optionbutton;
 
     public StartScreemAudio StartScreemAudio;
- public void StartGame()
+
+    public void StartGame()
     {
         Debug.Log("start");
-        
+
 
         //play door animation
         doorAnimator.enabled = true;
@@ -32,7 +33,7 @@ public class SceneManagement : MonoBehaviour
         cameraAnimator.SetBool("isStart", true);
         //wait a few seconds
         StartCoroutine(WaitDoor());
-        
+
     }
 
     public void QuitGame()
@@ -52,6 +53,7 @@ public class SceneManagement : MonoBehaviour
 
     }
 
+  
     public IEnumerator WaitDoor()
     {
         yield return new WaitForSeconds(2);
@@ -64,4 +66,8 @@ public class SceneManagement : MonoBehaviour
         OptionsMenu.SetActive(false);
         StartScreemAudio.StartScreenPlaying = true;
     }
+
+    
+
+    
 }

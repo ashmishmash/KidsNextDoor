@@ -4,7 +4,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenuScript : MonoBehaviour
-{
+{ 
+    public Animator tscrollAnim;
+    public Animator bscrollAnim;
+    public Animator pageAnim;
+    public Animator pawsAnim;
+
+
+    public int inputCount;
+    public GameObject pauseImage;
+    //public FirstPersonControls firstPersonControls
+    public CharacterController characterController;
+
+    public FirstPersonControls controls;
+
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
@@ -23,16 +36,8 @@ public class PauseMenuScript : MonoBehaviour
 
     }
 
-
    
-
-    public int inputCount;
-    public GameObject pauseImage;
-    //public FirstPersonControls firstPersonControls
-    public CharacterController characterController;
-    
-
-    private void Pause()
+    public void Pause()
     {
         inputCount++;
         //Debug.Log(inputCount);
@@ -56,9 +61,19 @@ public class PauseMenuScript : MonoBehaviour
         }*/
 
         pauseImage.SetActive(true);
+        tscrollAnim.enabled = true;
+        tscrollAnim.Play("top scroll");
+        bscrollAnim.enabled = true;
+        bscrollAnim.Play("bottom scroll open");
+        pageAnim.enabled = true;
+        pageAnim.Play("page");
+        pawsAnim.enabled = true;
+        pawsAnim.Play("paws");
         //firstPersonControls.enabled = false;
         characterController.enabled = false;
+        controls.lookSpeed = 0;
         Time.timeScale = 0;
+        
         //firstPersonControls.canShoot = false;
     }
 }
