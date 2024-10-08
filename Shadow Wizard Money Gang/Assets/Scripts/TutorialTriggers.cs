@@ -27,6 +27,16 @@ public class TutorialTriggers : MonoBehaviour
         {
             Crouch();
         }
+
+        if (CompareTag("LaserTut"))
+        {
+            Laser();
+        }
+
+        if (CompareTag("PauseTut"))
+        {
+            Pause();
+        }
     }
     public void MoveLook()
     {
@@ -52,9 +62,22 @@ public class TutorialTriggers : MonoBehaviour
         StartCoroutine(WaitToGo());
     }
 
+    public void Laser()
+    {
+        Triggers[0].SetActive(true);
+        StartCoroutine(WaitToGo());
+    }
+
+    public void Pause()
+    {
+        Triggers[1].SetActive(true);
+        StartCoroutine(WaitToGo());
+    }
     public IEnumerator WaitToGo()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+        Triggers[0].SetActive(false);
+        Triggers[1].SetActive(false);
         Triggers[2].SetActive(false);
         Triggers[3].SetActive(false);
         Triggers[4].SetActive(false);

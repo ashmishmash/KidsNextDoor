@@ -16,6 +16,10 @@ TagManager:
   - Symbol2
   - Symbol3
   - Key
+  - MoveLook
+  - Sprint
+  - Jump
+  - Crouch
   layers:
   - Default
   - TransparentFX
