@@ -14,7 +14,7 @@ public class KeyStuff : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && (firstPersonControls.keyCounter == KeyNumber))
+        if (other.CompareTag("Player") && (firstPersonControls.keyCounter >= KeyNumber))
         {
             //firstPersonControls.keyCounter -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
