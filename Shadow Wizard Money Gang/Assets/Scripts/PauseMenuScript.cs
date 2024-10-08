@@ -10,10 +10,9 @@ public class PauseMenuScript : MonoBehaviour
     public Animator pageAnim;
     public Animator pawsAnim;
 
-
     public int inputCount;
     public GameObject pauseImage;
-    //public FirstPersonControls firstPersonControls
+    public FirstPersonControls firstPersonControls;
     public CharacterController characterController;
 
     public FirstPersonControls controls;
@@ -61,19 +60,35 @@ public class PauseMenuScript : MonoBehaviour
         }*/
 
         pauseImage.SetActive(true);
+
+        tscrollAnim.SetFloat("Speed", 1f);
         tscrollAnim.enabled = true;
-        tscrollAnim.Play("top scroll");
+
+        bscrollAnim.SetFloat("Speed", 1f);
         bscrollAnim.enabled = true;
-        bscrollAnim.Play("bottom scroll open");
+
+        pageAnim.SetFloat("Speed", 1f);
         pageAnim.enabled = true;
-        pageAnim.Play("page");
+
+        pawsAnim.SetFloat("Speed", 1f);
         pawsAnim.enabled = true;
-        pawsAnim.Play("paws");
-        //firstPersonControls.enabled = false;
+        
+        firstPersonControls.enabled = false;
         characterController.enabled = false;
         controls.lookSpeed = 0;
         Time.timeScale = 0;
-        
+
+        StartCoroutine(WaitForAnim());
         //firstPersonControls.canShoot = false;
     }
+
+    public IEnumerator WaitForAnim()
+    {
+        yield return new WaitForSeconds(1f);
+        pawsAnim.enabled = false;
+        pageAnim.enabled = false;
+        tscrollAnim.enabled = false;
+        bscrollAnim.enabled = false;
+    }
+ 
 }
