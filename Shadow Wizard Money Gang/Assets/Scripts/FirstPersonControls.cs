@@ -58,16 +58,22 @@ public class FirstPersonControls : MonoBehaviour
 
     [Header("INTERACT SETTINGS")]
     [Space(5)]
-    
 
+
+    [Header ("sound")]
+    [Space (1)]
+    public Audio Audio;
     //Variables 
     public int count = 0;
 
     public int keyCounter = 0;
     public bool isSolved = false;
 
-   // public UnityEngine.UI.Image[] TutorialImages;
-   // public UnityEngine.UI.Image tutorialImage;
+    
+    
+
+    // public UnityEngine.UI.Image[] TutorialImages;
+    // public UnityEngine.UI.Image tutorialImage;
 
     private void Awake()
     {
@@ -186,7 +192,7 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    IEnumerator MyCo;
+   // IEnumerator MyCo;
 
     public void Laser()
     {
@@ -271,6 +277,8 @@ public class FirstPersonControls : MonoBehaviour
 
                 keyCounter =+ 1; //will have to make some sort of identifier if we are colour coding
                 Destroy(hit.collider.gameObject);
+                Audio.SoundEffects.PlayOneShot(Audio.keys);
+                //Debug.Log("got key");
             }
             // Check if the hit object has the tag "PickUp"
             else if (hit.collider.CompareTag("PickUp")) //narrative elements

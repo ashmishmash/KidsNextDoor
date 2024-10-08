@@ -14,12 +14,12 @@ public class Audio : MonoBehaviour
     public AudioClip DungenMusic;
 
     [Header("sound effects")]
-    public AudioClip wind;
+    public AudioClip keys;
     public bool SoundEffectPlay;
 
     private void Awake()
     {
-        Backgroundsource.Play();
+        //Backgroundsource.Play();
     }
     void Update()
     {
@@ -27,7 +27,8 @@ public class Audio : MonoBehaviour
 
         if (SoundEffectPlay == true) 
         {
-            SoundEffects.PlayOneShot(wind);
+            //SoundEffects.PlayOneShot(wind);
+            Backgroundsource.PlayOneShot(keys);
         }       
     }
 
