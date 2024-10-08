@@ -84,7 +84,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public IEnumerator WaitForAnim()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(2f);
         pawsAnim.enabled = false;
         pageAnim.enabled = false;
         tscrollAnim.enabled = false;

@@ -37,9 +37,9 @@ public class ButtonControls : MonoBehaviour
     }
 
     public IEnumerator WaitToPlay()
-    {  Debug.Log("Waited");
-        yield return new WaitForSeconds(2f);
-      
+    {  Debug.Log("Waiting");
+        yield return new WaitForSecondsRealtime(2f);
+        Debug.Log("Waited");
         tscrollAnim.enabled = false;
         bscrollAnim.enabled = false;
         pageAnim.enabled = false;
