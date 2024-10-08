@@ -11,10 +11,12 @@ public class PauseMenuScript : MonoBehaviour
     public Animator pawsAnim;
 
     public int inputCount;
+    public bool isPaused = false;
     public GameObject pauseImage;
     public CharacterController characterController;
 
     public FirstPersonControls controls;
+    public ButtonControls buttonControls;
 
     private void Awake()
     {
@@ -37,52 +39,49 @@ public class PauseMenuScript : MonoBehaviour
    
     public void Pause()
     {
-        inputCount++;
-        //Debug.Log(inputCount);
+        
+        Debug.Log(inputCount);
 
-        /*if (inputCount == 1)
+        if (isPaused == false)
         {
+            isPaused = true;
             pauseImage.SetActive(true);
-            firstPersonControls.enabled = false;
-            Time.timeScale = 0;
-            firstPersonControls.canShoot = false;
 
+            //image anims
+            tscrollAnim.SetFloat("Speed", 1f);
+            tscrollAnim.enabled = true;
+
+            bscrollAnim.SetFloat("Speed", 1f);
+            bscrollAnim.enabled = true;
+
+            pageAnim.SetFloat("Speed", 1f);
+            pageAnim.enabled = true;
+
+            pawsAnim.SetFloat("Speed", 1f);
+            pawsAnim.enabled = true;
+
+            DisableControls();
+
+
+            Time.timeScale = 0;
+
+            StartCoroutine(WaitForAnim());
+            
+
+        } 
+        else if (isPaused)
+        {
+            buttonControls.Resume();
+            inputCount = 0;
+            isPaused = false;
         }
 
-        if (inputCount == 2)
-        {
-            pauseImage.SetActive(false);
-            firstPersonControls.enabled=true;
-            Time.timeScale = 1;
-            firstPersonControls.canShoot = true;
-            inputCount = 0;
-        }*/
-
-        pauseImage.SetActive(true);
-
-        tscrollAnim.SetFloat("Speed", 1f);
-        tscrollAnim.enabled = true;
-
-        bscrollAnim.SetFloat("Speed", 1f);
-        bscrollAnim.enabled = true;
-
-        pageAnim.SetFloat("Speed", 1f);
-        pageAnim.enabled = true;
-
-        pawsAnim.SetFloat("Speed", 1f);
-        pawsAnim.enabled = true;
-
-        DisableControls();
         
-        
-        Time.timeScale = 0;
-
-        StartCoroutine(WaitForAnim());
     }
 
     public IEnumerator WaitForAnim()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3f);
         pawsAnim.enabled = false;
         pageAnim.enabled = false;
         tscrollAnim.enabled = false;
