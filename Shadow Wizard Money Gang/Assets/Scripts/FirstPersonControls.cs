@@ -54,7 +54,7 @@ public class FirstPersonControls : MonoBehaviour
     public float standingHeight = 2f; //make normal
     public float crouchSpeed = 1.5f; //make slow
     public bool isCrouching = false; //check if crouch
-
+    public bool canCrouch = true;
 
     [Header("INTERACT SETTINGS")]
     [Space(5)]
@@ -300,27 +300,30 @@ public class FirstPersonControls : MonoBehaviour
 
     public void ToggleCrouch()
     {
-        if (isCrouching)
+        if (canCrouch)
         {
-            //Stand up
-            characterController.height = standingHeight;
-            isCrouching = false;
-        }
-        else
-        {
-            //Crouch down
-            characterController.height = crouchHeight;
-            isCrouching = true;
-        }
+            if (isCrouching)
+            {
+                //Stand up
+                characterController.height = standingHeight;
+                isCrouching = false;
+            }
+            else
+            {
+                //Crouch down
+                characterController.height = crouchHeight;
+                isCrouching = true;
+            }
 
-        //Adjust speed if crouching
-        if (isCrouching)
-        {
-            currentSpeed = crouchSpeed;
-        }
-        else
-        {
-            currentSpeed = moveSpeed;
+            //Adjust speed if crouching
+            if (isCrouching)
+            {
+                currentSpeed = crouchSpeed;
+            }
+            else
+            {
+                currentSpeed = moveSpeed;
+            }
         }
     }
 

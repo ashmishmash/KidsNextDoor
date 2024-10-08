@@ -12,7 +12,6 @@ public class PauseMenuScript : MonoBehaviour
 
     public int inputCount;
     public GameObject pauseImage;
-    public FirstPersonControls firstPersonControls;
     public CharacterController characterController;
 
     public FirstPersonControls controls;
@@ -72,14 +71,13 @@ public class PauseMenuScript : MonoBehaviour
 
         pawsAnim.SetFloat("Speed", 1f);
         pawsAnim.enabled = true;
+
+        DisableControls();
         
-        firstPersonControls.enabled = false;
-        characterController.enabled = false;
-        controls.lookSpeed = 0;
+        
         Time.timeScale = 0;
 
         StartCoroutine(WaitForAnim());
-        //firstPersonControls.canShoot = false;
     }
 
     public IEnumerator WaitForAnim()
@@ -91,4 +89,13 @@ public class PauseMenuScript : MonoBehaviour
         bscrollAnim.enabled = false;
     }
  
+    public void DisableControls()
+    {
+        characterController.enabled = false;
+        controls.lookSpeed = 0;
+        controls.canShoot = false;
+        controls.crouchSpeed = 0;
+        controls.jumpHeight = 0;
+        controls.canCrouch = false;
+    }
 }

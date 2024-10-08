@@ -75,11 +75,28 @@ public class TutorialTriggers : MonoBehaviour
     }
     public IEnumerator WaitToGo()
     {
-        yield return new WaitForSeconds(3f);
-        Triggers[0].SetActive(false);
-        Triggers[1].SetActive(false);
-        Triggers[2].SetActive(false);
-        Triggers[3].SetActive(false);
-        Triggers[4].SetActive(false);
+        yield return new WaitForSeconds(2.5f);
+        if (Triggers.Length > 0)
+        {
+            Triggers[0].SetActive(false);
+        }
+        if (Triggers.Length > 1)
+        {
+            Triggers[1].SetActive(false);
+        }
+        if (Triggers.Length > 2)
+        {
+            Triggers[2].SetActive(false);
+        }
+        if (Triggers.Length > 3)
+        {
+            Triggers[3].SetActive(false);
+        }
+        if (Triggers.Length > 4)
+        {
+            Triggers[4].SetActive(false);
+        }
+
+
     }
 }

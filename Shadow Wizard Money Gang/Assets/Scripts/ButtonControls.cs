@@ -5,7 +5,6 @@ using UnityEngine;
 public class ButtonControls : MonoBehaviour
 {
     public PauseMenuScript PauseMenuScript;
-    public FirstPersonControls FirstPersonControls;
     public GameObject pauseImage;
     public CharacterController characterController;
     public FirstPersonControls controls;
@@ -47,11 +46,20 @@ public class ButtonControls : MonoBehaviour
 
         pauseImage.SetActive(false);
         PauseMenuScript.inputCount = 0;
-        FirstPersonControls.enabled = true;
+
+        EnableControls();
+       // controls.enabled = true;
+
+        Time.timeScale = 1;
+    }
+
+    public void EnableControls()
+    {
         characterController.enabled = true;
         controls.lookSpeed = 0.25f;
-        Time.timeScale = 1;
-        //FirstPersonControls.canShoot = true;
-
+        controls.canShoot = true;
+        controls.crouchSpeed = 1.5f;
+        controls.jumpHeight = 1f;
+        controls.canCrouch = true;
     }
 }
