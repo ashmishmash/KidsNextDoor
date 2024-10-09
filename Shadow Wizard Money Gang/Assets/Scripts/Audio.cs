@@ -14,6 +14,7 @@ public class Audio : MonoBehaviour
     public AudioClip DungenMusic;
 
     [Header("sound effects")]
+    public bool canPlay;
     public AudioClip keys;
     public bool SoundEffectPlay;
 
@@ -25,7 +26,7 @@ public class Audio : MonoBehaviour
     {
         
 
-        if (SoundEffectPlay == true) 
+        if (SoundEffectPlay == true && canPlay == true) 
         {
             //SoundEffects.PlayOneShot(wind);
             Backgroundsource.PlayOneShot(keys);
