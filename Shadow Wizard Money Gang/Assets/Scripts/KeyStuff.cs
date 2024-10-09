@@ -8,6 +8,7 @@ public class KeyStuff : MonoBehaviour
     public GameObject KeyToEnable;
     public GameObject DoorToOpen;
     public int KeyNumber;
+    public bool isdooropen = false;
 
     // Start is called before the first frame update
    
@@ -19,13 +20,18 @@ public class KeyStuff : MonoBehaviour
             //firstPersonControls.keyCounter -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
             StartCoroutine(OpenDoor()); //unlock door
+            isdooropen = true;
         }
     }
 
     public IEnumerator OpenDoor()
     {
         yield return new WaitForSeconds(1f);
-        DoorToOpen.SetActive(false);
+        if (isdooropen == true)
+        {
+
+        }
+        //DoorToOpen.SetActive(false);
     }
 
 
