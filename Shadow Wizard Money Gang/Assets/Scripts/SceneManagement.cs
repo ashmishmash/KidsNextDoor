@@ -45,10 +45,12 @@ public class SceneManagement : MonoBehaviour
     {
         //open options panel
         OptionsMenu.SetActive(true);
-        tscrollAnim.enabled = true;
+
+        bscrollAnim.SetFloat("Speed", 1f);
         bscrollAnim.enabled = true;
+
+        pageAnim.SetFloat("Speed", 1f);
         pageAnim.enabled = true;
-        pawsAnim.enabled = true;
         StartScreemAudio.StartScreenPlaying = false;
 
     }

@@ -41,14 +41,14 @@ public class ButtonControls : MonoBehaviour
             pageAnim.Play("close from quit");
         }
 
-        tscrollAnim.SetFloat("Speed",-1f);
-        tscrollAnim.enabled = true;
+        //tscrollAnim.SetFloat("Speed",-1f);
+        //tscrollAnim.enabled = true;
 
         bscrollAnim.SetFloat("Speed", -1f);
-        bscrollAnim.enabled = true;
+        bscrollAnim.enabled = true; 
 
-        pawsAnim.SetFloat("Speed", -1f);
-        pawsAnim.enabled = true;
+        //pawsAnim.SetFloat("Speed", -1f);
+       // pawsAnim.enabled = true;
 
         Debug.Log("Play");
         StartCoroutine(WaitToPlay());
@@ -59,10 +59,10 @@ public class ButtonControls : MonoBehaviour
     {  Debug.Log("Waiting");
         yield return new WaitForSecondsRealtime(2f);
         Debug.Log("Waited");
-        tscrollAnim.enabled = false;
-        bscrollAnim.enabled = false;
+        //tscrollAnim.enabled = false;
+        bscrollAnim.enabled = false; 
         pageAnim.enabled = false;
-        pawsAnim.enabled = false;
+       // pawsAnim.enabled = false;
 
         pauseImage.SetActive(false);
         PauseMenuScript.inputCount = 0;
