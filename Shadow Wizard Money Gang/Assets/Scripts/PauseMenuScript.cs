@@ -106,6 +106,8 @@ public class PauseMenuScript : MonoBehaviour
     public IEnumerator WaitForAnim()
     {
         yield return new WaitForSecondsRealtime(2f);
+        soundOptionsButtons.SetActive(true);
+        quitButton.SetActive(true);
         closeButton.SetActive(true);
 
         pawsAnim.enabled = false;
@@ -124,7 +126,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public IEnumerator WaitToDisable()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.2f);
 
 
         musicSlider.SetActive(false);
