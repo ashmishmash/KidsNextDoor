@@ -5,10 +5,11 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [Header("Other Scripts")]
-    [Space(3)]
+    [Space(4)]
     public LaserTimer laserTime;
     public Timer tim;
     public FirstPersonControls FirstPersonControls;
+    
 
     [Header("timer")]
     [Space(2)]
@@ -19,6 +20,7 @@ public class Timer : MonoBehaviour
     {
         if(laserTime.StablePowerLevel == false) 
         {
+            FirstPersonControls.Lasersound.SetActive(false);
             timer += Time.deltaTime;
             if(timer > Maxtime) 
             {

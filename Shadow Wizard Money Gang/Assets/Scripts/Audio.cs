@@ -16,6 +16,7 @@ public class Audio : MonoBehaviour
     [Header("sound effects")]
     public bool canPlay;
     public AudioClip keys;
+    public AudioClip lasersound;
     public bool SoundEffectPlay;
 
     private void Awake()

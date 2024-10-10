@@ -61,8 +61,9 @@ public class FirstPersonControls : MonoBehaviour
 
 
     [Header ("sound")]
-    [Space (1)]
+    [Space (2)]
     public Audio Audio;
+    public GameObject Lasersound;
     //Variables 
     public int count = 0;
 
@@ -205,6 +206,7 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(false);
                 isLaserOn = false;
                 shooting = false;
+                Lasersound.SetActive(false);
                 //StopCoroutine(MyCo);
                
             }
@@ -214,6 +216,7 @@ public class FirstPersonControls : MonoBehaviour
                 laserPrefab.SetActive(true);
                 isLaserOn = true;
                 shooting = true;
+                Lasersound.SetActive(true);
                 //MyCo = Timer();
                 //StartCoroutine(MyCo);
             }
