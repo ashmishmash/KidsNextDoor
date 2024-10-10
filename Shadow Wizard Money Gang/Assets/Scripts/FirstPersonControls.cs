@@ -70,7 +70,7 @@ public class FirstPersonControls : MonoBehaviour
     public int keyCounter = 0;
     public bool isSolved = false;
 
-    
+    public Animator animator;
     
 
     // public UnityEngine.UI.Image[] TutorialImages;
@@ -145,6 +145,17 @@ public class FirstPersonControls : MonoBehaviour
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
+
+       /* if (moveInput.x == 0 &&  moveInput.y == 0 )
+        {
+            currentSpeed = 0;
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }*/
+
+        animator.SetFloat("speed", currentSpeed);
     }
 
   
@@ -338,6 +349,7 @@ public class FirstPersonControls : MonoBehaviour
     public void Walk()
     {
         currentSpeed = moveSpeed;
+        
     }
 
     private void Interact()
