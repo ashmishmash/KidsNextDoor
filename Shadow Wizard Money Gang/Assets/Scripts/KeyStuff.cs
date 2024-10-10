@@ -9,6 +9,7 @@ public class KeyStuff : MonoBehaviour
     public GameObject DoorToOpen;
     public int KeyNumber;
     public bool isdooropen = false;
+    public GameObject player;
 
     public Animator dungeonDoorAnim;
     // Start is called before the first frame update
@@ -16,12 +17,22 @@ public class KeyStuff : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && (firstPersonControls.keyCounter >= KeyNumber))
+        if (other.gameObject.CompareTag("Player") && (firstPersonControls.keyCounter >= KeyNumber))
         {
+            //Debug.Log("open Door");
             //firstPersonControls.keyCounter -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
             isdooropen = true;
             StartCoroutine(OpenDoor()); //unlock door
+        }
+
+        if (other.gameObject == player) 
+        {
+            //Debug.Log("open Door");
+            if (firstPersonControls.keyCounter >= KeyNumber) 
+            {
+                //Debug.Log("plz");
+            }
         }
     }
 
