@@ -5,13 +5,17 @@ using UnityEngine;
 public class SkullActive : MonoBehaviour
 {
     public GameObject key;
-    public GameObject image;
+    public GameObject eye1;
+    public GameObject eye2;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Laser"))
         {
             Debug.Log("key unlock");
             key.SetActive(true);
+            eye1.SetActive(true);
+            eye2.SetActive(true);
         }
     }
 }

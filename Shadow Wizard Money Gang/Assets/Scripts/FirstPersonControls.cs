@@ -155,7 +155,7 @@ public class FirstPersonControls : MonoBehaviour
             currentSpeed = moveSpeed;
         }*/
 
-        animator.SetFloat("speed", currentSpeed);
+       // animator.SetFloat("speed", currentSpeed);
     }
 
   
@@ -281,6 +281,7 @@ public class FirstPersonControls : MonoBehaviour
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
 
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
@@ -289,10 +290,11 @@ public class FirstPersonControls : MonoBehaviour
                 //enable particle effect of some kind 
                 //zoom in on key for a while
 
+                
                 keyCounter =+ 1; //will have to make some sort of identifier if we are colour coding
                 Destroy(hit.collider.gameObject);
                 Audio.SoundEffects.PlayOneShot(Audio.keys);
-                //Debug.Log("got key");
+                Debug.Log("got key");
             }
             // Check if the hit object has the tag "PickUp"
             else if (hit.collider.CompareTag("PickUp")) //narrative elements
