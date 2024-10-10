@@ -17,7 +17,12 @@ public class SkullActive : MonoBehaviour
             key.SetActive(true);
             eye1.SetActive(true);
             eye2.SetActive(true);
-
+            symbol.SetActive(true);
         }
+    }
+
+    private void Update()
+    {
+        
     }
 }
