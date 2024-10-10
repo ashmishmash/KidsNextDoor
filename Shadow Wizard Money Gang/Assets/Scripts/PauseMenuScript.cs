@@ -74,12 +74,18 @@ public class PauseMenuScript : MonoBehaviour
 
             //image anims
             //tscrollAnim.SetFloat("Speed", 1f);
-           //tscrollAnim.enabled = true;
+            //tscrollAnim.enabled = true;
 
-            
+            pageAnim.SetFloat("Speed", 1f);
+            pageAnim.enabled = true;
+            pageAnim.Play("page open");
 
-            //pawsAnim.SetFloat("Speed", 1f);
-            //pawsAnim.enabled = true;
+            bscrollAnim.SetFloat("Speed", 1f);
+            bscrollAnim.enabled = true;
+
+
+            pawsAnim.SetFloat("Speed", 1f);
+            pawsAnim.enabled = true;
 
             DisableControls();
 
@@ -106,7 +112,7 @@ public class PauseMenuScript : MonoBehaviour
         quitButton.SetActive(true);
         closeButton.SetActive(true);
 
-       // pawsAnim.enabled = false;
+        pawsAnim.enabled = false;
         pageAnim.enabled = false;
        // tscrollAnim.enabled = false;
         bscrollAnim.enabled = false; 
@@ -173,6 +179,7 @@ public class PauseMenuScript : MonoBehaviour
         StartCoroutine(WaitForCloseButton());
         
         pageAnim.SetBool("isQuit", true);
+        pageAnim.SetFloat("Speed", 1f);
         pageAnim.enabled = true;
         pageAnim.Play("page quit");
         
@@ -181,7 +188,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public IEnumerator WaitforQuitMenu()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3f);
         yesQuitButton.SetActive(true);
         goBackButton.SetActive(true);
         pageAnim.enabled = false;

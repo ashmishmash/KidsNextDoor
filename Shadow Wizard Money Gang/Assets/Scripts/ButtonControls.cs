@@ -47,8 +47,8 @@ public class ButtonControls : MonoBehaviour
         bscrollAnim.SetFloat("Speed", -1f);
         bscrollAnim.enabled = true; 
 
-        //pawsAnim.SetFloat("Speed", -1f);
-       // pawsAnim.enabled = true;
+        pawsAnim.SetFloat("Speed", -1.5f);
+        pawsAnim.enabled = true;
 
         Debug.Log("Play");
         StartCoroutine(WaitToPlay());
@@ -62,7 +62,7 @@ public class ButtonControls : MonoBehaviour
         //tscrollAnim.enabled = false;
         bscrollAnim.enabled = false; 
         pageAnim.enabled = false;
-       // pawsAnim.enabled = false;
+        pawsAnim.enabled = false;
 
         pauseImage.SetActive(false);
         PauseMenuScript.inputCount = 0;

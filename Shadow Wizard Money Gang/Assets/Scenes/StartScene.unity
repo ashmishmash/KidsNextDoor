@@ -8222,8 +8222,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1313063946}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+      - m_Target: {fileID: 1504954850}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: Options
         m_Mode: 1
         m_Arguments:
