@@ -70,9 +70,13 @@ public class FirstPersonControls : MonoBehaviour
     public int keyCounter = 0;
     public bool isSolved = false;
 
-    public Animator animator;
+    [Header("Anim")]
+    [Space(4)]
 
+    public Animator animator;
     public float Velocity = 0f;
+    public bool isWalking;
+    public bool isJumping;
     
 
     // public UnityEngine.UI.Image[] TutorialImages;
@@ -135,6 +139,7 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
         TimerAleration();
+        JumpCheck();
     }
 
     public void Move()
@@ -144,23 +149,36 @@ public class FirstPersonControls : MonoBehaviour
 
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
-
-       /* velocity = currentSpeed * move;
+        
+        //velocity = currentSpeed * move;
         if (moveInput.x == 0 && moveInput.y == 0)
         {
-            velocity = 0f;
+            // velocity = 0f;
+            isWalking = false;
+
         }
         else
         {
-            velocity = moveSpeed;
-        }*/
+            //velocity = moveSpeed;
+            isWalking = true;
+        }
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
+
+       
         //animator.SetFloat("speed", currentSpeed);
+
+       
     }
 
-  
+    public void JumpCheck() 
+    {
+    if (characterController.isGrounded && velocity.y >0) 
+        {
+            Debug.Log("Grounded");
+        }
+    }
     public void LookAround()
     {
        
@@ -203,7 +221,10 @@ public class FirstPersonControls : MonoBehaviour
         {
             // Calculate the jump velocity
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Debug.Log("Jump");
         }
+
+       
     }
 
    // IEnumerator MyCo;
@@ -354,6 +375,7 @@ public class FirstPersonControls : MonoBehaviour
     public void Walk()
     {
         currentSpeed = moveSpeed;
+        
         
     }
 
