@@ -144,18 +144,18 @@ public class FirstPersonControls : MonoBehaviour
         move = transform.TransformDirection(move);
 
 
-        if (moveInput.x == 0 && moveInput.y == 0)
+        /*if (moveInput.x == 0 && moveInput.y == 0)
         {
             currentSpeed = 0;
         }
         else
         {
             currentSpeed = moveSpeed;
-        }
+        }*/
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
-        animator.SetFloat("speed", currentSpeed);
+        //animator.SetFloat("speed", currentSpeed);
     }
 
   
