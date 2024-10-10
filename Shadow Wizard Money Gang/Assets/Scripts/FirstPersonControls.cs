@@ -155,12 +155,20 @@ public class FirstPersonControls : MonoBehaviour
         {
             // velocity = 0f;
             isWalking = false;
+            animator.SetBool("Walkingis",false);
+            
 
         }
         else
         {
             //velocity = moveSpeed;
             isWalking = true;
+            animator.SetBool("Walkingis",true);
+
+            if (isWalking)
+            {
+                animator.SetBool("Walkingis",true );
+            }
         }
 
         // Move the character controller based on the movement vector and speed
