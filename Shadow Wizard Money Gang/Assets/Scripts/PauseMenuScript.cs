@@ -188,7 +188,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public IEnumerator WaitforQuitMenu()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(4f);
         yesQuitButton.SetActive(true);
         goBackButton.SetActive(true);
         pageAnim.enabled = false;
