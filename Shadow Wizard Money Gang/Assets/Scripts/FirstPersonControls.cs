@@ -71,6 +71,8 @@ public class FirstPersonControls : MonoBehaviour
     public bool isSolved = false;
 
     public Animator animator;
+
+    public float Velocity = 0f;
     
 
     // public UnityEngine.UI.Image[] TutorialImages;
@@ -143,14 +145,14 @@ public class FirstPersonControls : MonoBehaviour
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
 
-
-        /*if (moveInput.x == 0 && moveInput.y == 0)
+       /* velocity = currentSpeed * move;
+        if (moveInput.x == 0 && moveInput.y == 0)
         {
-            currentSpeed = 0;
+            velocity = 0f;
         }
         else
         {
-            currentSpeed = moveSpeed;
+            velocity = moveSpeed;
         }*/
 
         // Move the character controller based on the movement vector and speed
