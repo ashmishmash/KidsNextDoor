@@ -326,7 +326,7 @@ public class FirstPersonControls : MonoBehaviour
                 //zoom in on key for a while
 
                 
-                keyCounter =+ 1; //will have to make some sort of identifier if we are colour coding
+                keyCounter += 1; //will have to make some sort of identifier if we are colour coding
                 Destroy(hit.collider.gameObject);
                 //hit.collider.gameObject.SetActive(false);
                 Audio.SoundEffects.PlayOneShot(Audio.keys);
