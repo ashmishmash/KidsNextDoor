@@ -153,9 +153,13 @@ public class FirstPersonControls : MonoBehaviour
         //velocity = currentSpeed * move;
         if (moveInput.x == 0 && moveInput.y == 0)
         {
-            // velocity = 0f;
             isWalking = false;
-            animator.SetBool("Walkingis",false);
+            // velocity = 0f;
+            if (isWalking == false) 
+            {
+                animator.SetBool("Walkingis", false);
+            }
+           
             
 
         }
@@ -163,9 +167,9 @@ public class FirstPersonControls : MonoBehaviour
         {
             //velocity = moveSpeed;
             isWalking = true;
-            animator.SetBool("Walkingis",true);
+           // animator.SetBool("Walkingis",true);
 
-            if (isWalking)
+            if (isWalking == true)
             {
                 animator.SetBool("Walkingis",true );
             }
