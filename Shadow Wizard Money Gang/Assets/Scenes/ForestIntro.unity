@@ -16492,7 +16492,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -21183,6 +21183,8 @@ MonoBehaviour:
   characterController: {fileID: 213003759}
   controls: {fileID: 213003758}
   camAnim: {fileID: 1687491554}
+  dust: {fileID: 700776216}
+  rocks: {fileID: 455889648}
 --- !u!1 &589214833
 GameObject:
   m_ObjectHideFlags: 0
@@ -22833,7 +22835,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
