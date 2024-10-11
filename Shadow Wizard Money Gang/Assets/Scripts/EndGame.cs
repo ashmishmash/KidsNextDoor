@@ -49,7 +49,8 @@ public class EndGame : MonoBehaviour
     private IEnumerator Quit()
     {
         tobecontinued.SetActive(true );
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+        tobecontinued.SetActive(false);
         Application.Quit();
     }
 

@@ -18,6 +18,7 @@ public class FallTrap : MonoBehaviour
         DisableController();
         dust.enableEmission = true;
         rocks.enableEmission = true;
+        camAnim.enabled = true;
         camAnim.Play("dungeon trigger");
         //start particle effects
         
