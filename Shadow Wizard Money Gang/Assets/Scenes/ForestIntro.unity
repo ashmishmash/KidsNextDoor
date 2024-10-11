@@ -5420,7 +5420,7 @@ PrefabInstance:
     - target: {fileID: 8391419252489327517, guid: 90e5db2d589a56a4db4030846189a7fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.47
+      value: 33.21
       objectReference: {fileID: 0}
     - target: {fileID: 8391419252489327517, guid: 90e5db2d589a56a4db4030846189a7fb,
         type: 3}
@@ -5430,7 +5430,7 @@ PrefabInstance:
     - target: {fileID: 8391419252489327517, guid: 90e5db2d589a56a4db4030846189a7fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.3
+      value: 5.79
       objectReference: {fileID: 0}
     - target: {fileID: 8391419252489327517, guid: 90e5db2d589a56a4db4030846189a7fb,
         type: 3}
@@ -16271,8 +16271,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2761434, y: 0.999999, z: 0.8410711}
+  m_Center: {x: -0.12376264, y: 0, z: -0.42170942}
 --- !u!23 &558107868
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16350,6 +16350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dd9346167734741ab3d70fe1373b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 213003759}
+  controls: {fileID: 213003758}
+  camAnim: {fileID: 1687491554}
 --- !u!1 &589214833
 GameObject:
   m_ObjectHideFlags: 0
@@ -43562,6 +43565,12 @@ Transform:
 --- !u!4 &1687491552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391419252489327517, guid: 90e5db2d589a56a4db4030846189a7fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 213003757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1687491554 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2567550807865434071, guid: 90e5db2d589a56a4db4030846189a7fb,
     type: 3}
   m_PrefabInstance: {fileID: 213003757}
   m_PrefabAsset: {fileID: 0}
