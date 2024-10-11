@@ -57,7 +57,7 @@ public class SimplePause : MonoBehaviour
             DisableController();
 
 
-            Time.timeScale = 0;
+           // Time.timeScale = 0;
 
             StartCoroutine(WaitForAnim());
 
@@ -106,31 +106,28 @@ public class SimplePause : MonoBehaviour
         closeButton.SetActive(false);
         isPaused = false;
 
-        pageAnim.SetFloat("Speed", -1f);
-        pageAnim.enabled = true;
-
-        bscrollAnim.SetFloat("Speed", -1f);
-        bscrollAnim.enabled = true;
-
-        pawsAnim.SetFloat("Speed", -1f);
-        pawsAnim.enabled = true;
-
-        StartCoroutine(WaitToPlay());
-
+        pauseImage.SetActive(false);
+        bscrollAnim.enabled = false;
+        pageAnim.enabled = false;
+        pawsAnim.enabled = false;
+        EnableController();
     }
 
     public IEnumerator WaitToPlay()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(2f); 
+        
+        pauseImage.SetActive(false);
         bscrollAnim.enabled = false;
         pageAnim.enabled = false;
         pawsAnim.enabled = false;
-
-        pauseImage.SetActive(false);
+        pageAnim.SetBool("isPaused", false);
+        bscrollAnim.SetBool("isPaused", false);
+        pawsAnim.SetBool("isPaused", false);
 
         EnableController();
 
-        Time.timeScale = 1;
+       // Time.timeScale = 1;
     }
 
     public void CallQuit()
