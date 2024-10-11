@@ -16,10 +16,11 @@ public class FallTrap : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         DisableController();
-        camAnim.Play("dungeon trigger");
-        //start particle effects
         dust.enableEmission = true;
         rocks.enableEmission = true;
+        camAnim.Play("dungeon trigger");
+        //start particle effects
+        
         StartCoroutine(WaitToFall());
     }
 

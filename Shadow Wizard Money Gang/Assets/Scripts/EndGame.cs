@@ -10,6 +10,7 @@ public class EndGame : MonoBehaviour
     public CharacterController characterController;
     public FirstPersonControls controls;
 
+    public GameObject tobecontinued;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,6 +19,7 @@ public class EndGame : MonoBehaviour
             controls.lookSpeed = 1.5f;
             controls.moveSpeed = 0;
             lightning.SetActive(true);
+            
 
             StartCoroutine(Wait());
         }
@@ -25,13 +27,29 @@ public class EndGame : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position,target.position, 1f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position,target.position, 0.5f);
         yield return new WaitForSeconds(0.5f);
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 1f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
         yield return new WaitForSeconds(0.5f);
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 1f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
         yield return new WaitForSeconds(0.5f);
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 1f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
+        //playerAnim.Play("float");
+        StartCoroutine(Quit());
+       
+    }
+
+    private IEnumerator Quit()
+    {
+        tobecontinued.SetActive(true );
+        yield return new WaitForSeconds(2f);
         Application.Quit();
     }
 
