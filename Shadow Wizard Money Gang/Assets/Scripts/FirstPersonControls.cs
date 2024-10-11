@@ -234,11 +234,28 @@ public class FirstPersonControls : MonoBehaviour
             // Calculate the jump velocity
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             Debug.Log("Jump");
+            isJumping = true;
+            animator.SetBool("Jumpingis", true);
         }
 
-       
+       if(isJumping == true) 
+        {
+            //Debug.Log("jumping");
+            StartCoroutine(StopJump());
+        }
+
+       if (isJumping == false) 
+        {
+            //animator.SetBool("Jumpingis", false);
+        }
     }
 
+    public IEnumerator StopJump() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Jumpingis", false);
+        isJumping = false;
+    }
    // IEnumerator MyCo;
 
     public void Laser()
