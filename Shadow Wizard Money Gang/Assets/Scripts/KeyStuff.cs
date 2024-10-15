@@ -20,7 +20,7 @@ public class KeyStuff : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && (firstPersonControls.keyCounter >= KeyNumber))
         {
             //Debug.Log("open Door");
-            firstPersonControls.keyCounter -= 1;
+            //firstPersonControls.keyCounter -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
             isdooropen = true;
             StartCoroutine(OpenDoor()); //unlock door
