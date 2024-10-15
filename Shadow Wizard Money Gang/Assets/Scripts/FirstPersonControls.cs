@@ -70,6 +70,10 @@ public class FirstPersonControls : MonoBehaviour
     public int keyCounter = 0;
     public bool isSolved = false;
 
+    [Header("Skull Script")]
+    [Space(1)]
+    public SkullActive SkullScript;
+
     [Header("Anim")]
     [Space(4)]
 
@@ -77,6 +81,7 @@ public class FirstPersonControls : MonoBehaviour
     public float Velocity = 0f;
     public bool isWalking;
     public bool isJumping;
+
     
 
     // public UnityEngine.UI.Image[] TutorialImages;
@@ -233,7 +238,7 @@ public class FirstPersonControls : MonoBehaviour
         {
             // Calculate the jump velocity
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
             isJumping = true;
             animator.SetBool("Jumpingis", true);
         }
@@ -345,6 +350,7 @@ public class FirstPersonControls : MonoBehaviour
                 
                 keyCounter += 1; //will have to make some sort of identifier if we are colour coding
                 Destroy(hit.collider.gameObject);
+                SkullScript.laserEyeOff =true;
                 //hit.collider.gameObject.SetActive(false);
                 Audio.SoundEffects.PlayOneShot(Audio.keys);
                 Debug.Log("got key");
