@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+
 public class FirstPersonControls : MonoBehaviour
 {
     [Header("MOVEMENT SETTINGS")]
@@ -65,14 +66,19 @@ public class FirstPersonControls : MonoBehaviour
     public Audio Audio;
     public GameObject Lasersound;
     //Variables 
-    public int count = 0;
-
-    public int keyCounter = 0;
+   
     public bool isSolved = false;
 
     [Header("Skull Script")]
     [Space(1)]
     public SkullActive SkullScript;
+
+    [Header("Key")]
+    [Space(4)]
+    public Text KeyTextCounter;
+    public int count = 0;
+    public int keyCounter = 0;
+    public int keyDisplay = 0;
 
     [Header("Anim")]
     [Space(4)]
@@ -145,6 +151,7 @@ public class FirstPersonControls : MonoBehaviour
         ApplyGravity();
         TimerAleration();
         JumpCheck();
+        keyText();
     }
 
     public void Move()
@@ -292,6 +299,8 @@ public class FirstPersonControls : MonoBehaviour
 
        
     }
+
+  
     public IEnumerator Timer()
     {
 
@@ -349,6 +358,7 @@ public class FirstPersonControls : MonoBehaviour
 
                 
                 keyCounter += 1; //will have to make some sort of identifier if we are colour coding
+                keyDisplay += 1;
                 Destroy(hit.collider.gameObject);
                 SkullScript.laserEyeOff =true;
                 //hit.collider.gameObject.SetActive(false);
@@ -371,6 +381,10 @@ public class FirstPersonControls : MonoBehaviour
             }
             
         }
+    }
+    public void keyText()
+    {
+        KeyTextCounter.text = "x" + keyDisplay;
     }
 
     public void ToggleCrouch()

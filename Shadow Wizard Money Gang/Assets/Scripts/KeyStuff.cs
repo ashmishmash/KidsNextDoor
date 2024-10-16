@@ -21,6 +21,7 @@ public class KeyStuff : MonoBehaviour
         {
             //Debug.Log("open Door");
             //firstPersonControls.keyCounter -= 1;
+            firstPersonControls.keyDisplay -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
             isdooropen = true;
             StartCoroutine(OpenDoor()); //unlock door
