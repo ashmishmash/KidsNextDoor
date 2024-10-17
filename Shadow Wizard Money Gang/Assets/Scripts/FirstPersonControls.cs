@@ -385,6 +385,12 @@ public class FirstPersonControls : MonoBehaviour
     public void keyText()
     {
         KeyTextCounter.text = "x" + keyDisplay;
+
+        if(keyDisplay < 0) 
+        {
+            keyDisplay = 0;
+            //Debug.Log("less than zero");
+        }
     }
 
     public void ToggleCrouch()
