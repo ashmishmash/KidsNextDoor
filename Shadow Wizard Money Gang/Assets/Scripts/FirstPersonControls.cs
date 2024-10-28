@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 
 public class FirstPersonControls : MonoBehaviour
@@ -61,10 +63,17 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
 
 
-    [Header ("sound")]
-    [Space (2)]
+    [Header ("SOUNDS")]
+    [Space (3)]
     public Audio Audio;
     public GameObject Lasersound;
+    public bool canMeow;
+
+
+    [Header("UI")]
+    [Space(1)]
+    public Image CatFace;
+
     //Variables 
    
     public bool isSolved = false;
@@ -87,6 +96,8 @@ public class FirstPersonControls : MonoBehaviour
     public float Velocity = 0f;
     public bool isWalking;
     public bool isJumping;
+
+
 
     
 
@@ -134,12 +145,17 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the interact input event
         playerInput.Player.Interact.performed += ctx => Interact(); // Interact 
 
+        playerInput.Player.Meow.performed += ctx => Meow(); // makes meow sound
+
     }
 
 
     private void Start()
     {
        // MyCo = Timer();
+       canMeow = true;
+
+        
     }
 
 
@@ -152,6 +168,7 @@ public class FirstPersonControls : MonoBehaviour
         TimerAleration();
         JumpCheck();
         keyText();
+        MeowImage();
     }
 
     public void Move()
@@ -441,5 +458,44 @@ public class FirstPersonControls : MonoBehaviour
     }
 
 
+    public void MeowImage()
+    {
+        var CatFaceTransparency = CatFace.color;
+
+        if (canMeow == true)
+        {
+            CatFaceTransparency.a = 1f;  
+            CatFace.color = CatFaceTransparency;
+        }
+
+        if (canMeow == false)
+        {
+            CatFaceTransparency.a = 0.3f;
+            CatFace.color = CatFaceTransparency;
+        }
+
+    }
+
+    public void Meow() 
+    {
+        if(canMeow == true) 
+        {
+            StartCoroutine(Meoww());
+        }
+
+        
+       
+    }
+
+   
+
+    public IEnumerator Meoww() 
+    {
+        Audio.SoundEffects.PlayOneShot(Audio.Catsound);
+        canMeow = false;
+        Debug.Log("Meow Meow");
+        yield return new WaitForSeconds(1f);
+        canMeow = true;
+    }
    
 }

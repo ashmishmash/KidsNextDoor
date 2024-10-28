@@ -8,7 +8,9 @@ public class SkullActive : MonoBehaviour
     public GameObject eye1;
     public GameObject eye2;
     public GameObject symbol;
+    public GameObject SkullSound;
     public bool laserEyeOff;
+
     
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +22,7 @@ public class SkullActive : MonoBehaviour
             eye1.SetActive(true);
             eye2.SetActive(true);
             symbol.SetActive(true);
-            
+            SkullSound.SetActive(true);
         }
     }
 

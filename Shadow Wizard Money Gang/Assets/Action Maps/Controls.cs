@@ -116,6 +116,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Meow"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec7fa182-66e9-4ea0-9105-18c614ba967c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -756,6 +765,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Start game"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7118aaad-4267-46d0-94a9-b47297bf096b"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Meow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f96ab8f2-2729-49b6-aee1-9983863a28f2"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Meow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -785,6 +816,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Startgame = m_Player.FindAction("Start game", throwIfNotFound: true);
+        m_Player_Meow = m_Player.FindAction("Meow", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -856,6 +888,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Startgame;
+    private readonly InputAction m_Player_Meow;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -870,6 +903,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Startgame => m_Wrapper.m_Player_Startgame;
+        public InputAction @Meow => m_Wrapper.m_Player_Meow;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -909,6 +943,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Startgame.started += instance.OnStartgame;
             @Startgame.performed += instance.OnStartgame;
             @Startgame.canceled += instance.OnStartgame;
+            @Meow.started += instance.OnMeow;
+            @Meow.performed += instance.OnMeow;
+            @Meow.canceled += instance.OnMeow;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -943,6 +980,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Startgame.started -= instance.OnStartgame;
             @Startgame.performed -= instance.OnStartgame;
             @Startgame.canceled -= instance.OnStartgame;
+            @Meow.started -= instance.OnMeow;
+            @Meow.performed -= instance.OnMeow;
+            @Meow.canceled -= instance.OnMeow;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -990,5 +1030,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnStartgame(InputAction.CallbackContext context);
+        void OnMeow(InputAction.CallbackContext context);
     }
 }

@@ -16,7 +16,7 @@ public class Audio : MonoBehaviour
     [Header("sound effects")]
     public bool canPlay;
     public AudioClip keys;
-    public AudioClip lasersound;
+    public AudioClip Catsound;
     public bool SoundEffectPlay;
 
     private void Awake()
@@ -27,11 +27,11 @@ public class Audio : MonoBehaviour
     {
         
 
-        if (SoundEffectPlay == true && canPlay == true) 
+       /* if (SoundEffectPlay == true && canPlay == true) 
         {
             //SoundEffects.PlayOneShot(wind);
             Backgroundsource.PlayOneShot(keys);
-        }       
+        }   */    
     }
 
     
