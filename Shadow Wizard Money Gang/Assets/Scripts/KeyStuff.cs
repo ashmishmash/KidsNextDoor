@@ -10,6 +10,7 @@ public class KeyStuff : MonoBehaviour
     public int KeyNumber;
     public bool isdooropen = false;
     public GameObject player;
+    public GameObject DoorSound;
 
     public Animator dungeonDoorAnim;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class KeyStuff : MonoBehaviour
             //firstPersonControls.keyCounter -= 1;
             firstPersonControls.keyDisplay -= 1;
             KeyToEnable.SetActive(true); //enable key in door and wait a couple seconds
+            DoorSound.SetActive(true);
             isdooropen = true;
             StartCoroutine(OpenDoor()); //unlock door
         }
