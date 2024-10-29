@@ -9,6 +9,15 @@ public class DoorTriggerPointTwo : MonoBehaviour
     public GameObject ConfirmPoint;
     public float Timer;
     public float MaxTime;
+    public Audio Audio;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == DoorFace)
+        {
+            Audio.SoundEffects.PlayOneShot(Audio.Correct);
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {

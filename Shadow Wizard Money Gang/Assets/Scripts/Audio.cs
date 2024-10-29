@@ -19,6 +19,10 @@ public class Audio : MonoBehaviour
     public AudioClip Catsound;
     public bool SoundEffectPlay;
 
+    [Header("Puzzle Sounds")]
+    public AudioClip Correct;
+    public AudioClip Incorrect;
+
     private void Awake()
     {
         //Backgroundsource.Play();

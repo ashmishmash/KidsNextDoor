@@ -14,6 +14,8 @@ public class SymbolPuzzle : MonoBehaviour
 
     public GameObject keyDoor;
 
+    public Audio Audio;
+
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -24,21 +26,25 @@ public class SymbolPuzzle : MonoBehaviour
                 if (gameObject.CompareTag("Symbol1") && firstPersonControls.count == 0)
                 {
                     firstPersonControls.count += 1;
+                    Audio.SoundEffects.PlayOneShot(Audio.Correct);
                     StartCoroutine(FlashGreen());
                 }
                 else if (gameObject.CompareTag("Symbol2") && firstPersonControls.count == 1)
                 {
                     firstPersonControls.count += 1;
+                    Audio.SoundEffects.PlayOneShot(Audio.Correct);
                     StartCoroutine(FlashGreen());
                 }
                 else if (gameObject.CompareTag("Symbol3") && firstPersonControls.count == 2)
                 {
                     firstPersonControls.count += 1;
+                    Audio.SoundEffects.PlayOneShot(Audio.Correct);
                     StartCoroutine(FlashGreen());
                 }
                 else
                 {
-                    //Debug.Log("Boo wrong symbol");
+                    Debug.Log("Boo wrong symbol");
+                    Audio.SoundEffects.PlayOneShot(Audio.Incorrect);
                     firstPersonControls.count = 0;
                     StartCoroutine(FlashRed());
                 }
