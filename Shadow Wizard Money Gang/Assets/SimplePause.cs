@@ -44,6 +44,7 @@ public class SimplePause : MonoBehaviour
         {
             isPaused = true;
             pauseImage.SetActive(true);
+            Cursor.visible = true;
 
             pageAnim.SetFloat("Speed", 1f);
             pageAnim.enabled = true;
@@ -105,6 +106,7 @@ public class SimplePause : MonoBehaviour
     {
         closeButton.SetActive(false);
         isPaused = false;
+       Cursor.visible = false;
 
         pauseImage.SetActive(false);
         bscrollAnim.enabled = false;
