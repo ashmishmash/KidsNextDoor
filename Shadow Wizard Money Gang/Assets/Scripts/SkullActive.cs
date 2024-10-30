@@ -21,8 +21,8 @@ public class SkullActive : MonoBehaviour
            
             eye1.SetActive(true);
             eye2.SetActive(true);
-            symbol.SetActive(true);
             SkullSound.SetActive(true);
+            symbol.SetActive(true);
         }
     }
 
