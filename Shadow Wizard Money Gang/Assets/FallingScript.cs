@@ -23,7 +23,7 @@ public GameObject CatNip;
 
   public IEnumerator WaitToChange()
     {
-        yield return new WaitForSeconds(0.5f);
+        /*yield return new WaitForSeconds(0.5f);
         SymbolPuzzle.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         SymbolPuzzle.SetActive(false);
@@ -36,8 +36,8 @@ public GameObject CatNip;
         yield return new WaitForSeconds(0.5f);
         Skull.SetActive(false);
         yield return new WaitForSeconds(0.5f);
-        CatNip.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        CatNip.SetActive(true);*/
+        yield return new WaitForSeconds(2.5f);
         Debug.Log(Player.transform.position);
         SceneManager.LoadSceneAsync(3);
     }
