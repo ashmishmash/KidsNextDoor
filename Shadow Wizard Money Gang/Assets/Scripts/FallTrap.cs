@@ -48,9 +48,9 @@ public class FallTrap : MonoBehaviour
         camAnim.StopPlayback();
         laser.SetActive(false);
         Player.transform.position = FallingObject.transform.position;
-        characterController.enabled = true;
-        yield return new WaitForSeconds(1f);
-        //characterController.enabled = false;
+        //characterController.enabled = true;
+        // yield return new WaitForSeconds(1f);
+        characterController.enabled = false; /*
         StartRoom.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         StartRoom.SetActive(false);
@@ -66,6 +66,7 @@ public class FallTrap : MonoBehaviour
         CatNip.SetActive(true);
         yield return new WaitForSeconds(1f);
         //CatNip .SetActive(false);
+        */
         SceneManager.LoadSceneAsync(2);
     }
 
