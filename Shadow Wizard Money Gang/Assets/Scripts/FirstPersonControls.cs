@@ -483,38 +483,42 @@ public class FirstPersonControls : MonoBehaviour
         {
             //StartCoroutine(Meoww());
             MeowNumber = Random.Range(1, 5);
-            Debug.Log(MeowNumber);
-        }
+            //Debug.Log(MeowNumber);
 
-        if (MeowNumber == 1)
-        {
-            Debug.Log("Meow 1");
-            Audio.SoundEffects.PlayOneShot(Audio.Catsound);
-            StartCoroutine(Meoww());
-        }
-       
-        if (MeowNumber == 2)
-        {
-            Debug.Log("Meow 2");
-            StartCoroutine(Meoww());
-        }
+            if (MeowNumber == 1)
+            {
+                Debug.Log("Meow 1");
+                Audio.SoundEffects.PlayOneShot(Audio.Catsound1);
+                StartCoroutine(Meoww());
+            }
 
-        if (MeowNumber == 3)
-        {
-            Debug.Log("Meow 3");
-            StartCoroutine(Meoww());
-        }
+            if (MeowNumber == 2)
+            {
+                Debug.Log("Meow 2");
+                Audio.SoundEffects.PlayOneShot(Audio.Catsound2);
+                StartCoroutine(Meoww());
+            }
 
-        if (MeowNumber == 4)
-        {
-            Debug.Log("Meow 4");
-            StartCoroutine(Meoww());
-        }
+            if (MeowNumber == 3)
+            {
+                Debug.Log("Meow 3");
+                Audio.SoundEffects.PlayOneShot(Audio.Catsound3);
+                StartCoroutine(Meoww());
+            }
 
-        if (MeowNumber == 5)
-        {
-            Debug.Log("Meow 5");
-            StartCoroutine(Meoww());
+            if (MeowNumber == 4)
+            {
+                Debug.Log("Meow 4");
+                Audio.SoundEffects.PlayOneShot(Audio.Catsound4);
+                StartCoroutine(Meoww());
+            }
+
+            if (MeowNumber == 5)
+            {
+                Debug.Log("Meow 5");
+                Audio.SoundEffects.PlayOneShot(Audio.Catsound5);
+                StartCoroutine(Meoww());
+            }
         }
     }
 

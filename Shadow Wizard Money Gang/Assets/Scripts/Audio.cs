@@ -16,7 +16,11 @@ public class Audio : MonoBehaviour
     [Header("sound effects")]
     public bool canPlay;
     public AudioClip keys;
-    public AudioClip Catsound;
+    public AudioClip Catsound1;
+    public AudioClip Catsound2;
+    public AudioClip Catsound3;
+    public AudioClip Catsound4;
+    public AudioClip Catsound5;
     public bool SoundEffectPlay;
 
     [Header("Puzzle Sounds")]

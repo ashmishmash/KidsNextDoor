@@ -33,6 +33,7 @@ public class SkullActive : MonoBehaviour
             //Debug.Log("laser eye off");
             eye1.SetActive(false);
             eye2.SetActive(false);
+            SkullSound.SetActive(false);
             laserEyeOff = false;
         }   
     }
