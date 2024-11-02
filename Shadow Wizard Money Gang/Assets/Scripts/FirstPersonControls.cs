@@ -505,7 +505,7 @@ public class FirstPersonControls : MonoBehaviour
         if (canMeow == true)
         {
             //StartCoroutine(Meoww());
-            MeowNumber = Random.Range(1, 5);
+            MeowNumber = Random.Range(1, 6);
             //Debug.Log(MeowNumber);
 
             if (MeowNumber == 1)
