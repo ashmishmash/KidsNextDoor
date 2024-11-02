@@ -26,4 +26,6 @@ public class RotateDoor : MonoBehaviour
             DoorSound.SetActive(false);
         }
     }
+
+    
 }
