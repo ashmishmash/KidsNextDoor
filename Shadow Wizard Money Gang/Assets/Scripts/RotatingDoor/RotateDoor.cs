@@ -16,7 +16,7 @@ public class RotateDoor : MonoBehaviour
             DoorSound.SetActive(true);
         }
 
-      
+     
     }
 
     private void OnTriggerExit(Collider other)
@@ -25,8 +25,5 @@ public class RotateDoor : MonoBehaviour
         {
             DoorSound.SetActive(false);
         }
-            
     }
-
-
 }

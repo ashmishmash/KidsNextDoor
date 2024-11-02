@@ -5560,6 +5560,11 @@ PrefabInstance:
       propertyPath: canShoot
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215358529525566174, guid: 90e5db2d589a56a4db4030846189a7fb,
+        type: 3}
+      propertyPath: CanInteract
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7427412375894355505, guid: 90e5db2d589a56a4db4030846189a7fb,
         type: 3}
       propertyPath: m_IsActive
@@ -78456,6 +78461,8 @@ MonoBehaviour:
   LaserImage3: {fileID: 0}
   holdPosition: {fileID: 7637343884167068670}
   pickUpRange: 3
+  InteractRange: 3
+  CanInteract: 0
   crouchHeight: 1
   standingHeight: 2
   crouchSpeed: 1.5
@@ -78914,7 +78921,7 @@ GameObject:
   - component: {fileID: 7781091993536272906}
   m_Layer: 0
   m_Name: CartCat aka Fin
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

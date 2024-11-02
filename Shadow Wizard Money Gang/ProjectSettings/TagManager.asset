@@ -22,6 +22,7 @@ TagManager:
   - Crouch
   - LaserTut
   - PauseTut
+  - NPC
   layers:
   - Default
   - TransparentFX

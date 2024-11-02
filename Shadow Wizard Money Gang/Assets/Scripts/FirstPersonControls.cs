@@ -48,7 +48,12 @@ public class FirstPersonControls : MonoBehaviour
     public Transform holdPosition; // Position where the picked-up object will be held
     private GameObject heldObject; // Reference to the currently held object
     public float pickUpRange = 3f; // Range within which objects can be picked up
-    
+
+
+    [Header("INTERACT SETTINGS")]
+    [Space(5)]
+    public float InteractRange = 3f;
+    public bool CanInteract;
 
     [Header("CROUCH SETTINGS")]
     [Space(5)]
@@ -58,8 +63,6 @@ public class FirstPersonControls : MonoBehaviour
     public bool isCrouching = false; //check if crouch
     public bool canCrouch = true;
 
-    [Header("INTERACT SETTINGS")]
-    [Space(5)]
 
 
     [Header ("SOUNDS")]
@@ -453,8 +456,28 @@ public class FirstPersonControls : MonoBehaviour
 
     private void Interact()
     {
-       
-       
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
+
+        if (Physics.Raycast(ray, out hit, InteractRange)) 
+        {
+            if (hit.collider.CompareTag("NPC") && CanInteract == true) 
+            {
+                Debug.Log("Interact");
+                StartCoroutine(InteractWithFin());
+            }
+        }
+    }
+
+    public IEnumerator InteractWithFin() 
+    {
+        CanInteract = false;
+        yield return new WaitForSeconds(1f);
+        //turn around animation
+        //text box apear & move through
+        //after event bring allow them to re-interact with Fin?
     }
 
 
