@@ -508,7 +508,7 @@ public class FirstPersonControls : MonoBehaviour
     public IEnumerator InteractWithFin() 
     {
         CanInteract = false;
-        moveSpeed = 0;
+        currentSpeed = 0;
         lookSpeed = 0;
         canCrouch = false;
         canMeow = false;
@@ -516,7 +516,7 @@ public class FirstPersonControls : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         
-        //dialogueTutText.SetActive(true);
+        dialogueTutText.SetActive(true);
         dialogueTextFirst.SetActive(true); //enable the first text and tutorial text
         dialogue.StartDialogue(); //enable the script
         yield return new WaitForSeconds(2f);
