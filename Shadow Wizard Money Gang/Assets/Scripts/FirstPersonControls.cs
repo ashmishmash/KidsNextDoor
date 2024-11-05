@@ -53,7 +53,10 @@ public class FirstPersonControls : MonoBehaviour
     [Header("INTERACT SETTINGS")]
     [Space(5)]
     public float InteractRange = 3f;
-    public bool CanInteract;
+    public bool CanInteract;    
+    public DialogueFinn dialogue;
+    public GameObject dialogueTextFirst;
+    public GameObject dialogueTutText;
 
     [Header("CROUCH SETTINGS")]
     [Space(5)]
@@ -106,7 +109,7 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject Particals;
 
 
-    public DialogueFinn dialogue;
+
 
     // public UnityEngine.UI.Image[] TutorialImages;
     // public UnityEngine.UI.Image tutorialImage;
@@ -505,19 +508,20 @@ public class FirstPersonControls : MonoBehaviour
     public IEnumerator InteractWithFin() 
     {
         CanInteract = false;
-        yield return new WaitForSeconds(1f);
         moveSpeed = 0;
         lookSpeed = 0;
         canCrouch = false;
         canMeow = false;
         jumpHeight = 0;
 
-        //enable the first text and tutorial text
+        yield return new WaitForSeconds(1f);
+        
+        //dialogueTutText.SetActive(true);
+        dialogueTextFirst.SetActive(true); //enable the first text and tutorial text
         dialogue.StartDialogue(); //enable the script
-
-        //turn around animation
-        //text box apear & move through
-        //after event bring allow them to re-interact with Fin?
+        yield return new WaitForSeconds(2f);
+        dialogueTutText.SetActive(false);
+      
     }
 
 

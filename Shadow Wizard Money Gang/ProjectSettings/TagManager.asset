@@ -23,6 +23,7 @@ TagManager:
   - LaserTut
   - PauseTut
   - NPC
+  - Interact
   layers:
   - Default
   - TransparentFX

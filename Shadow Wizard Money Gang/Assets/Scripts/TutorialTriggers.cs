@@ -37,6 +37,11 @@ public class TutorialTriggers : MonoBehaviour
         {
             Pause();
         }
+
+        if (CompareTag("Interact"))
+        {
+            Interact();
+        }
     }
     public void MoveLook()
     {
@@ -73,6 +78,12 @@ public class TutorialTriggers : MonoBehaviour
         Triggers[1].SetActive(true);
         StartCoroutine(WaitToGo());
     }
+
+    public void Interact()
+    {
+        Triggers[5].SetActive(true);
+        StartCoroutine(WaitToGo());
+    }
     public IEnumerator WaitToGo()
     {
         yield return new WaitForSeconds(2.5f);
@@ -95,6 +106,10 @@ public class TutorialTriggers : MonoBehaviour
         if (Triggers.Length > 4)
         {
             Triggers[4].SetActive(false);
+        }
+        if (Triggers.Length > 5)
+        {
+            Triggers[5].SetActive(false);
         }
 
 
