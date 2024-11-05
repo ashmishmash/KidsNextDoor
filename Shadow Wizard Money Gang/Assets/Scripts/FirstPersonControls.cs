@@ -57,6 +57,7 @@ public class FirstPersonControls : MonoBehaviour
     public DialogueFinn dialogue;
     public GameObject dialogueTextFirst;
     public GameObject dialogueTutText;
+    public GameObject dialogueBackground;
 
     [Header("CROUCH SETTINGS")]
     [Space(5)]
@@ -517,6 +518,7 @@ public class FirstPersonControls : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         dialogueTutText.SetActive(true);
+        dialogueBackground.SetActive(true);
         dialogueTextFirst.SetActive(true); //enable the first text and tutorial text
         dialogue.StartDialogue(); //enable the script
         yield return new WaitForSeconds(2f);

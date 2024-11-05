@@ -7,6 +7,7 @@ public class DialogueFinn : MonoBehaviour
 {
     private Controls playerInput;
     public GameObject[] DialogueText;
+    public GameObject[] DialogueBackground;
     public int textCount = 0;
     public FirstPersonControls controls;
     public GameObject dialogueTutText;
@@ -29,12 +30,15 @@ public class DialogueFinn : MonoBehaviour
         {
             DialogueText[textCount].SetActive(false);
             DialogueText[textCount + 1].SetActive(true);
+            DialogueBackground[textCount].SetActive(false);
+            DialogueBackground[textCount + 1].SetActive(true);
             textCount += 1;
             Debug.Log(textCount);
         }
         else
         {
             DialogueText[textCount].SetActive(false);
+            DialogueBackground[textCount].SetActive(false);
             controls.CanInteract = true;
             controls.currentSpeed = 3f;
             controls.lookSpeed = 0.25f;
