@@ -26,6 +26,7 @@ public class DialogueFinn : MonoBehaviour
     }
     public void Dialogue()
     {
+       
         if (controls.CanInteract == false)
         {
             if (textCount < 6)
@@ -38,16 +39,17 @@ public class DialogueFinn : MonoBehaviour
                 Debug.Log(textCount);
             }
             else
-            {
+            {  
                 DialogueText[textCount].SetActive(false);
-                DialogueBackground[textCount].SetActive(false);
+                DialogueBackground[textCount].SetActive(false); 
+                textCount = 0;
                 controls.CanInteract = true;
                 controls.currentSpeed = 3f;
                 controls.lookSpeed = 0.25f;
                 controls.canCrouch = true;
                 controls.canMeow = true;
                 controls.jumpHeight = 1f;
-                textCount = 0;
+                Debug.Log(textCount);
             }
         }
 
