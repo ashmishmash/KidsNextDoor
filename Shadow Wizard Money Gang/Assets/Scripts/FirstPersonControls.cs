@@ -99,9 +99,13 @@ public class FirstPersonControls : MonoBehaviour
     public bool isWalking;
     public bool isJumping;
 
+    [Header("Partical")]
+    [Space(4)]
+    public bool landed;
+    public ParticleSystem Clouds;
+    public GameObject Particals;
 
 
-    
 
     // public UnityEngine.UI.Image[] TutorialImages;
     // public UnityEngine.UI.Image tutorialImage;
@@ -172,6 +176,7 @@ public class FirstPersonControls : MonoBehaviour
         keyText();
         MeowImage();
         //MeowType();
+        Land();
     }
 
     public void Move()
@@ -259,6 +264,13 @@ public class FirstPersonControls : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime); // Apply the velocity to the character
     }
 
+
+    public IEnumerator PlayCould() 
+    {
+        yield return new WaitForSeconds(0.75f);
+        Clouds.Play();
+    }
+
     public void Jump()
     {
         if (characterController.isGrounded)
@@ -267,6 +279,7 @@ public class FirstPersonControls : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             //Debug.Log("Jump");
             isJumping = true;
+            StartCoroutine(PlayCould());
             animator.SetBool("Jumpingis", true);
         }
 
@@ -279,7 +292,24 @@ public class FirstPersonControls : MonoBehaviour
        if (isJumping == false) 
         {
             //animator.SetBool("Jumpingis", false);
+            
         }
+    }
+
+    public void Land() 
+    {
+    if(characterController.isGrounded == true && landed == true) 
+        {
+            Debug.Log("land");
+            Particals.SetActive(true);
+            StartCoroutine(stopLand());
+        }
+    }
+
+    public IEnumerator stopLand() 
+    {
+        landed = false;
+        yield return new WaitForSeconds(0f);
     }
 
     public IEnumerator StopJump() 
