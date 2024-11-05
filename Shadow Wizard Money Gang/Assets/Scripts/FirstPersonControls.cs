@@ -514,7 +514,7 @@ public class FirstPersonControls : MonoBehaviour
         canCrouch = false;
         canMeow = false;
         jumpHeight = 0;
-
+        
         yield return new WaitForSeconds(1f);
         
         dialogueTutText.SetActive(true);

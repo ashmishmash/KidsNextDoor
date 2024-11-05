@@ -26,26 +26,29 @@ public class DialogueFinn : MonoBehaviour
     }
     public void Dialogue()
     {
-        if (textCount < 6)
+        if (controls.CanInteract == false)
         {
-            DialogueText[textCount].SetActive(false);
-            DialogueText[textCount + 1].SetActive(true);
-            DialogueBackground[textCount].SetActive(false);
-            DialogueBackground[textCount + 1].SetActive(true);
-            textCount += 1;
-            Debug.Log(textCount);
-        }
-        else
-        {
-            DialogueText[textCount].SetActive(false);
-            DialogueBackground[textCount].SetActive(false);
-            controls.CanInteract = true;
-            controls.currentSpeed = 3f;
-            controls.lookSpeed = 0.25f;
-            controls.canCrouch = true;
-            controls.canMeow = true;
-            controls.jumpHeight = 1f;
-            textCount = 0;
+            if (textCount < 6)
+            {
+                DialogueText[textCount].SetActive(false);
+                DialogueText[textCount + 1].SetActive(true);
+                DialogueBackground[textCount].SetActive(false);
+                DialogueBackground[textCount + 1].SetActive(true);
+                textCount += 1;
+                Debug.Log(textCount);
+            }
+            else
+            {
+                DialogueText[textCount].SetActive(false);
+                DialogueBackground[textCount].SetActive(false);
+                controls.CanInteract = true;
+                controls.currentSpeed = 3f;
+                controls.lookSpeed = 0.25f;
+                controls.canCrouch = true;
+                controls.canMeow = true;
+                controls.jumpHeight = 1f;
+                textCount = 0;
+            }
         }
 
     }
