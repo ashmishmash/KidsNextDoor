@@ -11,7 +11,8 @@ public class DialogueFinn : MonoBehaviour
     public int textCount = 0;
     public FirstPersonControls controls;
     public GameObject dialogueTutText;
-    public void StartDialogue()
+
+    private void Awake()
     {
         // Create a new instance of the input actions
         playerInput = new Controls();
@@ -21,6 +22,17 @@ public class DialogueFinn : MonoBehaviour
 
         // Subscribe to the movement input events
         playerInput.Player.Dialogue.performed += ctx => Dialogue();
+    }
+    public void StartDialogue()
+    {
+       /* // Create a new instance of the input actions
+        playerInput = new Controls();
+
+        // Enable the input actions
+        playerInput.Player.Enable();
+
+        // Subscribe to the movement input events
+        playerInput.Player.Dialogue.performed += ctx => Dialogue();*/
 
 
     }
@@ -38,6 +50,7 @@ public class DialogueFinn : MonoBehaviour
                 textCount += 1;
                 Debug.Log(textCount);
             }
+            
             else
             {  
                 DialogueText[textCount].SetActive(false);
@@ -51,10 +64,13 @@ public class DialogueFinn : MonoBehaviour
                 controls.jumpHeight = 1f;
                 Debug.Log(textCount);
             }
+
+         
         }
+    }
 
     }
 
     
-}
+
 

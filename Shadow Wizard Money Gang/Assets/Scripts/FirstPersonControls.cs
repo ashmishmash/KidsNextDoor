@@ -523,6 +523,7 @@ public class FirstPersonControls : MonoBehaviour
         dialogue.StartDialogue(); //enable the script
         yield return new WaitForSeconds(2f);
         dialogueTutText.SetActive(false);
+        //CanInteract = true;
       
     }
 
