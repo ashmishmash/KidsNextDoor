@@ -125,6 +125,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""67cd2fc9-bf8c-448b-8d1c-b5f7aa2cba1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -780,11 +789,33 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f96ab8f2-2729-49b6-aee1-9983863a28f2"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Meow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c307451-50a0-4f4b-a204-2fdfff3e4ec7"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""783bc143-2e81-4a0c-bf20-eaa25e983039"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -817,6 +848,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Startgame = m_Player.FindAction("Start game", throwIfNotFound: true);
         m_Player_Meow = m_Player.FindAction("Meow", throwIfNotFound: true);
+        m_Player_Dialogue = m_Player.FindAction("Dialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -889,6 +921,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Startgame;
     private readonly InputAction m_Player_Meow;
+    private readonly InputAction m_Player_Dialogue;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -904,6 +937,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Startgame => m_Wrapper.m_Player_Startgame;
         public InputAction @Meow => m_Wrapper.m_Player_Meow;
+        public InputAction @Dialogue => m_Wrapper.m_Player_Dialogue;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -946,6 +980,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Meow.started += instance.OnMeow;
             @Meow.performed += instance.OnMeow;
             @Meow.canceled += instance.OnMeow;
+            @Dialogue.started += instance.OnDialogue;
+            @Dialogue.performed += instance.OnDialogue;
+            @Dialogue.canceled += instance.OnDialogue;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -983,6 +1020,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Meow.started -= instance.OnMeow;
             @Meow.performed -= instance.OnMeow;
             @Meow.canceled -= instance.OnMeow;
+            @Dialogue.started -= instance.OnDialogue;
+            @Dialogue.performed -= instance.OnDialogue;
+            @Dialogue.canceled -= instance.OnDialogue;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1031,5 +1071,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnStartgame(InputAction.CallbackContext context);
         void OnMeow(InputAction.CallbackContext context);
+        void OnDialogue(InputAction.CallbackContext context);
     }
 }

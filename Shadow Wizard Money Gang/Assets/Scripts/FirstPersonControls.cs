@@ -106,6 +106,7 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject Particals;
 
 
+    public DialogueFinn dialogue;
 
     // public UnityEngine.UI.Image[] TutorialImages;
     // public UnityEngine.UI.Image tutorialImage;
@@ -505,6 +506,15 @@ public class FirstPersonControls : MonoBehaviour
     {
         CanInteract = false;
         yield return new WaitForSeconds(1f);
+        moveSpeed = 0;
+        lookSpeed = 0;
+        canCrouch = false;
+        canMeow = false;
+        jumpHeight = 0;
+
+        //enable the first text and tutorial text
+        dialogue.StartDialogue(); //enable the script
+
         //turn around animation
         //text box apear & move through
         //after event bring allow them to re-interact with Fin?
