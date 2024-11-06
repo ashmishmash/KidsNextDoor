@@ -7,6 +7,7 @@ public class LightTriggerPoint : MonoBehaviour
 {
     public Light Light;
      public GameObject fire;
+    public GameObject BurningSound;
       float TimeToWait = 5f;
       float maxLight = 40f;
       float MidLight = 30f;
@@ -27,6 +28,7 @@ public class LightTriggerPoint : MonoBehaviour
     {
         Light.enabled = true;
         fire.SetActive(true);
+        BurningSound.SetActive(true);
         Light.intensity = maxLight;
         yield return new WaitForSeconds(TimeToWait);
         Light.intensity = MidLight;
