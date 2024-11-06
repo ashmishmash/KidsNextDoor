@@ -8,6 +8,7 @@ public class Audio : MonoBehaviour
     [Header("Source")]
     public AudioSource Backgroundsource;
     public AudioSource SoundEffects;
+    public AudioSource ThudSound;
    
 
     [Header("Background Music")]
@@ -21,6 +22,7 @@ public class Audio : MonoBehaviour
     public AudioClip Catsound3;
     public AudioClip Catsound4;
     public AudioClip Catsound5;
+    public AudioClip thud;
     public bool SoundEffectPlay;
 
     [Header("Puzzle Sounds")]

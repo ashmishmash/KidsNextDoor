@@ -273,6 +273,7 @@ public class FirstPersonControls : MonoBehaviour
     public IEnumerator PlayCould() 
     {
         yield return new WaitForSeconds(0.75f);
+        Audio.ThudSound.PlayOneShot(Audio.thud);
         Clouds.Play();
     }
 
@@ -307,6 +308,8 @@ public class FirstPersonControls : MonoBehaviour
         {
             Debug.Log("land");
             Particals.SetActive(true);
+            //Audio.SoundEffects.PlayOneShot(Audio.thud);
+            Audio.ThudSound.PlayOneShot(Audio.thud);
             StartCoroutine(stopLand());
         }
     }
