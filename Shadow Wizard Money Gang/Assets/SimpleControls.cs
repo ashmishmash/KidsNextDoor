@@ -27,7 +27,7 @@ public class SimpleControls : MonoBehaviour
 
         bscrollAnim.SetFloat("Speed", 1f);
         bscrollAnim.enabled = true;
-        //bscrollAnim.Play("bottom scroll open");
+        bscrollAnim.Play("bottom scroll open controls");
 
         pawsAnim.SetFloat("Speed", 1f);
         pawsAnim.enabled = true;
