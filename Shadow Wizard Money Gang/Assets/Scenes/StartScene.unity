@@ -2300,10 +2300,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 205803024}
     m_Modifications:
+    - target: {fileID: 736738299384730732, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168617428025982605, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507259207665382518, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2810550691743705444, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810550691743705444, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620878969429224357, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286304781029410298, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286304781029410298, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
@@ -2314,6 +2344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585259984520165035, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8966430277253688337, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
@@ -8403,7 +8438,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 479
+    m_Bits: 223
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 76c1bea1280440c489260eee18800dfb, type: 2}
   m_TargetDisplay: 0
@@ -11120,10 +11155,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 205803024}
     m_Modifications:
+    - target: {fileID: 736738299384730732, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168617428025982605, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507259207665382518, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2810550691743705444, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810550691743705444, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620878969429224357, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286304781029410298, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
@@ -11163,7 +11223,7 @@ PrefabInstance:
     - target: {fileID: 8966430277253688337, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2576719
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 8966430277253688337, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
@@ -11173,7 +11233,7 @@ PrefabInstance:
     - target: {fileID: 8966430277253688337, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10338391
+      value: -0.024
       objectReference: {fileID: 0}
     - target: {fileID: 8966430277253688337, guid: c95f1ebb15fd5f94086ef0744f9f9c63,
         type: 3}
