@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
@@ -45,7 +46,8 @@ public class EndGame : MonoBehaviour
         StartCoroutine(Quit());*/
 
         yield return new WaitForSeconds(10f);
-       
+        SceneManager.LoadSceneAsync(4);
+
     }
 
     private IEnumerator Quit()
