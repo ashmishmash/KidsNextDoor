@@ -15,10 +15,10 @@ public class EndGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            characterController.enabled = false;
-            controls.lookSpeed = 1.5f;
-            controls.moveSpeed = 0;
-            lightning.SetActive(true);
+            //characterController.enabled = false;
+            //controls.lookSpeed = 1.5f;
+            //controls.moveSpeed = 0;
+            //lightning.SetActive(true);
             
 
             StartCoroutine(Wait());
@@ -27,7 +27,7 @@ public class EndGame : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        Player.transform.position = Vector3.MoveTowards(Player.transform.position,target.position, 0.5f);
+        /*Player.transform.position = Vector3.MoveTowards(Player.transform.position,target.position, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
         yield return new WaitForSeconds(0.5f);
@@ -42,13 +42,15 @@ public class EndGame : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Player.transform.position = Vector3.MoveTowards(Player.transform.position, target.position, 0.5f);
         //playerAnim.Play("float");
-        StartCoroutine(Quit());
+        StartCoroutine(Quit());*/
+
+        yield return new WaitForSeconds(10f);
        
     }
 
     private IEnumerator Quit()
     {
-        tobecontinued.SetActive(true );
+        //tobecontinued.SetActive(true );
         yield return new WaitForSeconds(3f);
         tobecontinued.SetActive(false);
         Application.Quit();
