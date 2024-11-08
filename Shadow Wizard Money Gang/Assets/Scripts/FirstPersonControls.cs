@@ -58,6 +58,8 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject dialogueTextFirst;
     public GameObject dialogueTutText;
     public GameObject dialogueBackground;
+    public GameObject exclamation;
+    private int dialogueCount = 0;
 
     [Header("CROUCH SETTINGS")]
     [Space(5)]
@@ -511,6 +513,13 @@ public class FirstPersonControls : MonoBehaviour
 
     public IEnumerator InteractWithFin() 
     {
+        dialogueCount += 1;
+
+        if (dialogueCount == 1)
+        {
+            exclamation.SetActive(false);
+        }
+
         CanInteract = false;
         currentSpeed = 0;
         lookSpeed = 0;
@@ -523,7 +532,6 @@ public class FirstPersonControls : MonoBehaviour
         dialogueTutText.SetActive(true);
         dialogueBackground.SetActive(true);
         dialogueTextFirst.SetActive(true); //enable the first text and tutorial text
-        dialogue.StartDialogue(); //enable the script
         yield return new WaitForSeconds(2f);
         dialogueTutText.SetActive(false);
         //CanInteract = true;

@@ -23,22 +23,9 @@ public class DialogueFinn : MonoBehaviour
         // Subscribe to the movement input events
         playerInput.Player.Dialogue.performed += ctx => Dialogue();
     }
-    public void StartDialogue()
-    {
-       /* // Create a new instance of the input actions
-        playerInput = new Controls();
-
-        // Enable the input actions
-        playerInput.Player.Enable();
-
-        // Subscribe to the movement input events
-        playerInput.Player.Dialogue.performed += ctx => Dialogue();*/
-
-
-    }
+    
     public void Dialogue()
     {
-       
         if (controls.CanInteract == false)
         {
             if (textCount < 6)
