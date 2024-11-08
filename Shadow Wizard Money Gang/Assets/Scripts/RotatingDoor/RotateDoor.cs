@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotateDoor : MonoBehaviour
 {
     public GameObject Zone;
-    public GameObject DoorSound;
+    //public GameObject DoorSound;
     public float roateDistance;
     private void OnTriggerStay(Collider other)
     {
@@ -13,7 +13,7 @@ public class RotateDoor : MonoBehaviour
         {
             //Debug.Log("Turn Door");
             Zone.transform.Rotate(0, 0, roateDistance);
-            DoorSound.SetActive(true);
+            //DoorSound.SetActive(true);
         }
 
      
@@ -23,7 +23,7 @@ public class RotateDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Laser")) 
         {
-            DoorSound.SetActive(false);
+            //DoorSound.SetActive(false);
         }
     }
 
