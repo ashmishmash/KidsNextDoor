@@ -36,7 +36,9 @@ public class LightTriggerPoint : MonoBehaviour
         Light.intensity = MidLight;
         yield return new WaitForSeconds(TimeToWait);
         Light.intensity = minLight;
-        yield return new WaitForSeconds(TimeToWait);
+        Destroy(this.gameObject);
+        //yield return new WaitForSeconds(TimeToWait);
+
     }
     
 }
