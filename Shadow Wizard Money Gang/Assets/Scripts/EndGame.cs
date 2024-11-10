@@ -45,7 +45,7 @@ public class EndGame : MonoBehaviour
         //playerAnim.Play("float");
         StartCoroutine(Quit());*/
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadSceneAsync(4);
 
     }
