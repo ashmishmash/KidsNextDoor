@@ -41,6 +41,11 @@ public class SceneManagement : MonoBehaviour
         Application.Quit();
     }
 
+    public void Replay() 
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
     public void Options()
     {
         //open options panel
